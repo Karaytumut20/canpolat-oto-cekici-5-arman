@@ -12,6 +12,6 @@ export const siteConfig = {
   latitude: 41.1496077,
   longitude: 29.6464956,
   logo: "/sile-cekici-hizir-logo.jpg",
-  hero: "/sile-cekici-hero.jpg",
+  hero: "/sile-cekici-hero-v2.png",
   domain: "https://canpolatotokurtarma.com",
 } as const;
