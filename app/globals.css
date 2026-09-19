@@ -52,7 +52,7 @@ h1 em,h2 em { color:var(--red); font-style:italic; }
 .hero-primary-call span,.hero-whatsapp-btn span:not(.whatsapp-mark) { display:flex; flex-direction:column; }
 .hero-actions small { font:800 .62rem var(--body); letter-spacing:.14em; opacity:.8; }
 .hero-whatsapp-btn { background:#121d17; border-color:#28c76f; color:#f5fff8; }
-.whatsapp-mark { width:31px; height:31px; display:grid; place-items:center; border:2px solid currentColor; border-radius:50%; color:#28c76f; font-size:.65rem; }
+.whatsapp-mark { width:31px; height:31px; flex:0 0 31px; color:#28c76f; }
 .trust-row { display:flex; gap:1.5rem; flex-wrap:wrap; margin-top:2.2rem; }
 .trust-row span { display:flex; align-items:center; gap:.45rem; color:#d6d6d6; font-size:.83rem; font-weight:700; }
 .trust-row svg { width:17px; color:var(--red); }
