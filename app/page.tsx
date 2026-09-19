@@ -1,142 +1,95 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight, BatteryCharging, CarFront, Check, MapPin, Navigation, Phone, PhoneCall, ShieldCheck, Star, Truck } from "lucide-react";
+import { ArrowDown, ArrowUpRight, BatteryCharging, CarFront, Check, Clock3, Fuel, MapPin, Navigation, Phone, PhoneCall, ShieldCheck, Truck, Wrench } from "lucide-react";
 import { priorityAreas, serviceAreas } from "@/lib/service-areas";
 import { problemPages, routePages, servicePages } from "@/lib/seo-content";
 import { BrandLogo } from "@/components/brand-logo";
 import { MobileMenu } from "@/components/mobile-menu";
+import { siteConfig } from "@/lib/site-config";
 
-const phone = "+905418238815";
-const mapsUrl = "https://maps.app.goo.gl/ptUMNrqeF2E79wwt6?g_st=iwb";
 const services = [
-  { n:"01", icon:Truck, title:"Oto kurtarma", text:"Arızalı veya kazalı aracınızı hidrolik kayar kasa ile güvenle yüklüyoruz." },
-  { n:"02", icon:CarFront, title:"Ahtapot vinç", text:"Tekerleği kilitli ve yürümeyen araçları dört noktadan, kaportaya temas etmeden alıyoruz." },
-  { n:"03", icon:BatteryCharging, title:"Yol yardım", text:"Akü takviyesi, lastik arızası ve acil teknik destek için 7/24 yola çıkıyoruz." },
+  { icon: Truck, title: "Oto çekici", text: "Arızalı veya kazalı aracınızı kayar kasa ile bulunduğunuz noktadan güvenle alıyoruz." },
+  { icon: CarFront, title: "Oto kurtarma", text: "Yoldan çıkan, tekeri kilitlenen veya hareket edemeyen araçlara uygun ekipmanla müdahale ediyoruz." },
+  { icon: BatteryCharging, title: "Akü takviyesi", text: "Marş basmayan araçlarda yerinde akü takviyesi ve yol yardım desteği sağlıyoruz." },
+  { icon: Wrench, title: "Lastik desteği", text: "Patlak lastik ve küçük yol arızalarında aracınızı yeniden yola hazırlıyoruz." },
+  { icon: Fuel, title: "Yakıt desteği", text: "Yakıtı biten araçlara konuma göre yakıt ulaştırıyor veya güvenli noktaya taşıyoruz." },
+  { icon: Navigation, title: "Şehirler arası taşıma", text: "Aracınızı Şile’den İstanbul ve çevre illerdeki servis ya da teslim adresine taşıyoruz." },
 ];
-const reviews = [
-  { name:"Alperen Takıcak", route:"Kuzey Marmara Otoyolu → Sakarya", text:"Şanzıman kilitlendi, ön tekerler dönmüyordu. Gerekli aparatlarla aracı zarar vermeden yükleyip servise ulaştırdılar." },
-  { name:"Ataşehir Britishcity", route:"Çakmak Mahallesi", text:"Telefonda ilgili davrandılar, kısa sürede konuma ulaşıp aracı dikkatlice çekiciye yüklediler." },
-  { name:"Seyit Bulut", route:"Üsküdar · Kısıklı", text:"Kamyonumuz arıza yapınca kısa sürede geldiler. Süreci baştan sona profesyonelce yönettiler." },
-];
+
 const faqs = [
-  { q: "Çekici ne kadar sürede gelir?", a: "Varış süresi bulunduğunuz konuma, trafik durumuna ve uygun ekibin mesafesine göre değişir. Konumunuzu ilettiğinizde tahmini süreyi telefonda paylaşıyoruz." },
-  { q: "Tekerlekleri kilitli araç nasıl yüklenir?", a: "Tekerlekleri dönmeyen araçlarda lastiklerden kavrayan ahtapot vinç veya kaydırıcı aparatlar kullanıyoruz. Aracı kasaya zorlayarak sürüklemiyoruz." },
-  { q: "Gece ve hafta sonu hizmet veriyor musunuz?", a: "Evet. Canpolat Oto Kurtarma haftanın 7 günü, 24 saat oto çekici ve yol yardım hizmeti verir." },
-  { q: "Şehirler arası araç taşıyor musunuz?", a: "Evet. İstanbul’dan Türkiye’nin farklı illerine planlı araç transferi yapıyoruz. Teslim adresi ve araç bilgisine göre fiyatlandırma sunuyoruz." },
-  { q: "Çekici fiyatı nasıl belirlenir?", a: "Fiyat; alınacak konum, teslim adresi, araç tipi, yürür durumu ve gereken ekipmana göre belirlenir. İşleme başlamadan önce ücreti netleştiriyoruz." },
+  { q: "Şile’de çekici ne kadar sürede gelir?", a: "Süre; bulunduğunuz mahalleye, trafik durumuna ve ekibin o anki konumuna göre değişir. Canlı konumunuzu gönderdiğinizde tahmini varış bilgisini telefonda netleştiriyoruz." },
+  { q: "Gece ve hafta sonu hizmet var mı?", a: "Evet. Şile ve çevresinde haftanın 7 günü, 24 saat çekici ve yol yardım desteği için arayabilirsiniz." },
+  { q: "Ağva ve köylere geliyor musunuz?", a: "Evet. Ağva merkezden Şile’nin kıyı, orman ve köy mahallelerine kadar hizmet veriyoruz. Konum bağlantısı göndermeniz yeterli." },
+  { q: "Çekici fiyatı nasıl belirleniyor?", a: "Ücret; alınacak ve bırakılacak konum, araç tipi, aracın yürür durumda olup olmaması ve gereken ekipmana göre belirlenir. İşleme başlamadan önce fiyatı netleştiriyoruz." },
+  { q: "Tekerlekleri kilitli araç taşınabilir mi?", a: "Evet. Aracın durumunu ve mümkünse fotoğrafını gönderin; kaydırıcı aparat veya uygun kurtarma yöntemiyle güvenli yükleme planlayalım." },
 ];
 
 export default function Home() {
-  const neighborhoods = serviceAreas.filter((a) => a.type === "mahalle" && a.district === "Ümraniye");
+  const neighborhoods = serviceAreas.filter((area) => area.type === "mahalle" && area.district === "Şile");
+
   return (
     <main>
       <header className="site-header">
-        <a className="brand" href="#anasayfa" aria-label="Canpolat Oto Kurtarma ana sayfa"><BrandLogo /></a>
-        <nav aria-label="Ana menü"><a href="#hizmetler">Hizmetler</a><a href="#bolgeler">Bölgeler</a><a href="#yorumlar">Yorumlar</a></nav>
-        <a className="header-call" href={`tel:${phone}`}><Phone size={18} /> 0541 823 88 15</a>
-        <MobileMenu links={[{href:"/#hizmetler",label:"Hizmetler"},{href:"/#bolgeler",label:"Hizmet bölgeleri"},{href:"/#yorumlar",label:"Yorumlar"},{href:"/#iletisim",label:"İletişim ve konum"}]} />
+        <a className="brand" href="#anasayfa" aria-label="Şile Çekici ana sayfa"><BrandLogo /></a>
+        <nav aria-label="Ana menü"><a href="#hizmetler">Hizmetler</a><a href="#bolgeler">Hizmet bölgeleri</a><a href="#iletisim">Konum</a><a href="#sss">Sık sorulanlar</a></nav>
+        <a className="header-call" href={`tel:${siteConfig.phone}`}><Phone size={18} /> {siteConfig.phoneDisplay}</a>
+        <MobileMenu links={[{ href: "/#hizmetler", label: "Hizmetler" }, { href: "/#bolgeler", label: "Hizmet bölgeleri" }, { href: "/#iletisim", label: "İletişim ve konum" }, { href: "/#sss", label: "Sık sorulanlar" }]} />
       </header>
 
       <section className="hero" id="anasayfa">
-        <Image className="hero-image" src="/canpolat-hero-bg.jpg" alt="Canpolat Oto Kurtarma hidrolik kayar kasa çekici ile araç taşıma" fill priority sizes="100vw" />
-        <div className="hero-shade" /><div className="hero-grid" aria-hidden="true" />
+        <Image className="hero-image" src={siteConfig.hero} alt="Şile yolunda araç taşıyan oto çekici" fill priority sizes="100vw" />
+        <div className="hero-overlay" />
+        <div className="hero-route" aria-hidden="true">ŞİLE · AĞVA · KUMBABA · SOFULAR · İMRANLI · KABAKOZ</div>
         <div className="hero-content">
-          <h1>
-            YOLDA KALDIYSANIZ,<br />
-            <em>YOL BİZİM İŞİMİZ.</em>
-          </h1>
-
-          <p className="hero-lead">
-            İstanbul genelinde binek, SUV ve ticari araçlara 7/24 hasarsız oto kurtarma.
-            Aracı komisyoncu yok; doğrudan sahadaki çekici ustasıyla görüşün.
-          </p>
-
+          <div className="hero-kicker"><span /> ŞİLE VE ÇEVRESİ · 7/24 YOL YARDIM</div>
+          <h1>ŞİLE’DE YOLDA<br /><em>KALMAYIN.</em></h1>
+          <p className="hero-lead">Çekici, oto kurtarma ve acil yol yardımı için konumunuzu gönderin. Şile merkez, Ağva ve tüm mahallelere ulaşalım.</p>
           <div className="hero-actions">
-            <a className="hero-primary-call" href={`tel:${phone}`} aria-label="0541 823 88 15 numarasını hemen ara">
-              <div className="hero-call-glow" aria-hidden="true" />
-              <PhoneCall size={24} className="hero-call-icon" />
-              <span className="hero-call-num">0541 823 88 15</span>
-            </a>
-
-            <a
-              className="hero-whatsapp-btn"
-              href="https://wa.me/905418238815?text=Merhaba,%20yolda%20kald%C4%B1m,%20oto%20%C3%A7ekici%20laz%C4%B1m.%20Konumumu%20payla%C5%9F%C4%B1yorum."
-              target="_blank"
-              rel="noreferrer"
-              aria-label="WhatsApp ile konum gönder"
-            >
-              <svg className="hero-wp-svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-                <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.979-.276-.1-.476-.15-.677.15-.2.301-.777.979-.953 1.18-.175.201-.351.226-.652.075s-1.274-.469-2.427-1.498c-.897-.799-1.503-1.787-1.679-2.088-.175-.301-.019-.464.132-.614.136-.135.301-.351.452-.527.15-.175.2-.301.301-.501.1-.2.05-.376-.025-.526s-.677-1.633-.928-2.235c-.244-.587-.492-.507-.677-.516l-.577-.01c-.2 0-.527.075-.802.376s-1.053 1.028-1.053 2.508 1.079 2.91 1.229 3.11c.15.201 2.124 3.243 5.145 4.549.719.311 1.28.497 1.718.636.722.23 1.379.197 1.9-.12.581-.353 1.78-1.092 2.031-2.148.25-1.055.25-1.956.175-2.148-.075-.192-.275-.301-.576-.451z" />
-                <path d="M12.004 0C5.378 0 0 5.378 0 12.004c0 2.115.551 4.183 1.6 6.002L.055 24l6.172-1.618a11.96 11.96 0 0 0 5.777 1.488h.005c6.625 0 12.004-5.378 12.004-12.005C24.013 5.378 18.632 0 12.004 0zm0 21.821h-.004a9.94 9.94 0 0 1-5.068-1.393l-.364-.216-3.766.988 1.006-3.673-.237-.377a9.92 9.92 0 0 1-1.523-5.216c0-5.503 4.478-9.98 9.986-9.98 2.666 0 5.172 1.039 7.058 2.925a9.92 9.92 0 0 1 2.922 7.061c0 5.504-4.478 9.981-9.98 9.981z" />
-              </svg>
-              <span className="hero-wp-title">WHATSAPP KONUM AT</span>
-            </a>
+            <a className="hero-primary-call" href={`tel:${siteConfig.phone}`} aria-label={`${siteConfig.phoneDisplay} numarasını ara`}><PhoneCall size={24} /><span><small>HEMEN ARA</small>{siteConfig.phoneDisplay}</span></a>
+            <a className="hero-whatsapp-btn" href={siteConfig.whatsapp} target="_blank" rel="noreferrer" aria-label="WhatsApp ile konum gönder"><span className="whatsapp-mark">●</span><span><small>WHATSAPP</small>Konum Gönder</span></a>
           </div>
-
-          <div className="hero-quick-shortcuts" aria-label="Mobil Hızlı Menü">
-            <a href="#hizmetler" className="hero-shortcut-pill">
-              <Truck size={14} /> Hizmetler
-            </a>
-            <a href="#bolgeler" className="hero-shortcut-pill">
-              <MapPin size={14} /> Bölgeler
-            </a>
-            <a href="#yorumlar" className="hero-shortcut-pill">
-              <Star size={14} /> Yorumlar (5.0)
-            </a>
-            <a href="#iletisim" className="hero-shortcut-pill">
-              <Navigation size={14} /> Yol Tarifi & Konum
-            </a>
-          </div>
-
-          <div className="trust-row">
-            <span><Star size={16} fill="currentColor" /> <b>5.0</b> / 85 Google yorumu</span>
-            <span><ShieldCheck size={16} /> Kaskolu & Sabit Fiyat</span>
-          </div>
+          <div className="trust-row"><span><Clock3 /> 7 gün 24 saat</span><span><ShieldCheck /> Güvenli araç taşıma</span><span><MapPin /> Şile ve çevresi</span></div>
         </div>
-        <div className="hero-index" aria-hidden="true"><b>24</b><span>/ 07</span></div><a href="#hizmetler" className="scroll-cue" aria-label="Hizmetlere geç"><ArrowDown /></a>
+        <aside className="hero-badge"><Image src={siteConfig.logo} alt="Şile Çekici Hızır Oto Kurtarıcı logosu" width={1254} height={1254} priority /></aside>
+        <a href="#hizmetler" className="scroll-cue" aria-label="Hizmetlere geç"><ArrowDown /></a>
       </section>
 
-      <section className="proof-strip" aria-label="Hizmet özellikleri"><span><Check /> KASKOLU TAŞIMA</span><span><Check /> HİDROLİK KAYAR KASA</span><span><Check /> AHTAPOT VİNÇ</span><span><Check /> ŞEHİRLER ARASI NAKİL</span></section>
+      <section className="proof-strip" aria-label="Hizmet özellikleri"><span><Check /> 7/24 ÇEKİCİ</span><span><Check /> HIZLI KONUM DESTEĞİ</span><span><Check /> KAYAR KASA</span><span><Check /> ŞİLE’NİN TÜM MAHALLELERİ</span></section>
 
       <section className="services section-pad" id="hizmetler">
-        <div className="section-heading"><div><small>SAHADA NE YAPIYORUZ?</small><h2>ARACIN DURUMUNA GÖRE<br />DOĞRU EKİPMAN.</h2></div><p>Her araca aynı yöntem uygulanmaz. Durumu telefonda netleştirir, uygun kasa ve aparatla geliriz.</p></div>
-        <div className="service-grid">{services.map(({n,icon:Icon,title,text}) => <article className="service-card" key={title}><span className="service-no">{n}</span><Icon /><h3>{title}</h3><p>{text}</p><a href={`tel:${phone}`}>Bu hizmet için ara <ArrowUpRight size={17}/></a></article>)}</div>
+        <div className="section-heading"><div><small>YOLDA NEYE İHTİYACINIZ VAR?</small><h2>DOĞRU ARAÇ.<br /><em>DOĞRU MÜDAHALE.</em></h2></div><p>Aracın durumunu ve konumunu telefonda netleştirip gerekli ekipmanla yola çıkıyoruz.</p></div>
+        <div className="service-grid">{services.map(({ icon: Icon, title, text }, index) => <article className="service-card" key={title}><span className="service-no">0{index + 1}</span><Icon /><h3>{title}</h3><p>{text}</p><a href={`tel:${siteConfig.phone}`}>Bu hizmet için ara <ArrowUpRight /></a></article>)}</div>
       </section>
 
-      <section className="process section-pad">
-        <div className="process-copy"><small>3 ADIMDA YARDIM</small><h2>BEKLEMEYİ DEĞİL,<br />YOLU KISALTIYORUZ.</h2><p>Telefon görüşmesinde aracınızın durumunu, bulunduğunuz noktayı ve gideceği adresi netleştiriyoruz. Fiyatı önceden konuşuyoruz.</p><a className="text-link" href={`tel:${phone}`}>0541 823 88 15 <ArrowUpRight /></a></div>
-        <ol><li><b>01</b><div><h3>Konumu gönderin</h3><p>WhatsApp’tan canlı konumunuzu ve aracın fotoğrafını iletin.</p></div></li><li><b>02</b><div><h3>Ekip yola çıksın</h3><p>En yakın aracımızı uygun ekipmanla bulunduğunuz noktaya yönlendirelim.</p></div></li><li><b>03</b><div><h3>Güvenle teslim edelim</h3><p>Aracınızı istediğiniz servise veya adrese hasarsız ulaştıralım.</p></div></li></ol>
+      <section className="dispatch section-pad">
+        <div className="dispatch-visual"><Image src={siteConfig.logo} alt="Şile Hızır oto kurtarıcı marka görseli" width={1254} height={1254} /></div>
+        <div className="dispatch-copy"><small>3 ADIMDA YARDIM</small><h2>KONUMU ATIN.<br /><em>YOLA ÇIKALIM.</em></h2><ol><li><b>01</b><span><strong>Bizi arayın</strong>Aracın durumunu kısaca anlatın.</span></li><li><b>02</b><span><strong>Konumu paylaşın</strong>WhatsApp’tan canlı konum ve fotoğraf gönderin.</span></li><li><b>03</b><span><strong>Güvenle taşıyalım</strong>Aracı istediğiniz servis veya adrese ulaştıralım.</span></li></ol><a className="text-link" href={siteConfig.whatsapp} target="_blank" rel="noreferrer">WHATSAPP’TAN KONUM GÖNDER <ArrowUpRight /></a></div>
       </section>
 
       <section className="areas section-pad" id="bolgeler">
-        <div className="section-heading"><div><small>HİZMET AĞI</small><h2>ÜMRANİYE’DEN<br />İSTANBUL’A.</h2></div><p>Şile Yolu, TEM ve Kuzey Marmara bağlantılarına yakın merkezimizden Anadolu Yakası başta olmak üzere tüm İstanbul’a ulaşıyoruz.</p></div>
-        <div className="priority-areas">{priorityAreas.map((a,i)=><Link href={`/bolgeler/${a.slug}`} key={a.slug}><span>0{i+1}</span>{a.name} Oto Çekici<ArrowUpRight /></Link>)}</div>
-        <div className="neighborhoods"><h3>Ümraniye mahalleleri</h3><div>{neighborhoods.map(a=><Link href={`/bolgeler/${a.slug}`} key={a.slug}>{a.name}</Link>)}</div></div>
-        <details className="all-districts"><summary>Tüm İstanbul ilçelerini gör <span>+</span></summary><div>{serviceAreas.filter(a=>a.type==="ilce").map(a=><Link href={`/bolgeler/${a.slug}`} key={a.slug}>{a.name} Oto Çekici</Link>)}</div></details>
+        <div className="section-heading"><div><small>HİZMET AĞI</small><h2>ŞİLE’NİN HER<br /><em>NOKTASINDAYIZ.</em></h2></div><p>Merkezden Ağva’ya, sahil hattından orman köylerine kadar Şile’nin tüm mahallelerinde çekici ve yol yardım.</p></div>
+        <div className="priority-areas">{priorityAreas.map((area, index) => <Link href={`/bolgeler/${area.slug}`} key={area.slug}><span>0{index + 1}</span>{area.name} Oto Çekici<ArrowUpRight /></Link>)}</div>
+        <div className="neighborhoods"><div className="neighborhoods-head"><h3>Şile mahalleleri</h3><span>{neighborhoods.length} noktada hizmet</span></div><div>{neighborhoods.map((area) => <Link href={`/bolgeler/${area.slug}`} key={area.slug}>{area.name}</Link>)}</div></div>
+        <div className="route-chips" aria-label="Şile çevresi önemli güzergâhlar">{routePages.slice(0, 8).map((route) => <Link href={`/guzergahlar/${route.slug}`} key={route.slug}>{route.name}</Link>)}</div>
       </section>
 
       <section className="search-intents section-pad">
-        <div className="section-heading"><div><small>NE ARIYORSUNUZ?</small><h2>DURUMA GÖRE<br />DOĞRU SAYFA.</h2></div><p>Hizmet türüne, yaşadığınız arızaya veya yolda kaldığınız güzergâha göre doğrudan ilgili bilgiye ulaşın.</p></div>
-        <div className="intent-columns"><article><span>01</span><h3>Hizmete göre</h3>{servicePages.slice(0,6).map(x=><Link href={`/hizmetler/${x.slug}`} key={x.slug}>{x.name}<ArrowUpRight/></Link>)}<Link className="intent-all" href="/hizmetler">Tüm hizmetler</Link></article><article><span>02</span><h3>Arızaya göre</h3>{problemPages.slice(0,6).map(x=><Link href={`/cozumler/${x.slug}`} key={x.slug}>{x.name}<ArrowUpRight/></Link>)}<Link className="intent-all" href="/cozumler">Tüm acil durumlar</Link></article><article><span>03</span><h3>Yola göre</h3>{routePages.slice(0,6).map(x=><Link href={`/guzergahlar/${x.slug}`} key={x.slug}>{x.name}<ArrowUpRight/></Link>)}<Link className="intent-all" href="/guzergahlar">Tüm güzergâhlar</Link></article></div>
-        <Link className="area-directory-link" href="/hizmet-bolgeleri"><span><b>1.000+ yerel sayfa</b>İstanbul’un tüm ilçe ve mahalleleri</span><ArrowUpRight/></Link>
-      </section>
-
-      <section className="reviews section-pad" id="yorumlar">
-        <div className="review-score"><small>GERÇEK DENEYİMLER</small><b>5,0</b><div>{[1,2,3,4,5].map(n=><Star key={n} fill="currentColor" />)}</div><p>85 Google değerlendirmesi</p></div>
-        <div className="review-list">{reviews.map(r=><blockquote key={r.name}><div className="quote-mark">“</div><p>{r.text}</p><footer><span>{r.name}<small>{r.route}</small></span><span className="stars">★★★★★</span></footer></blockquote>)}</div>
+        <div className="section-heading"><div><small>HIZLI BİLGİ</small><h2>İHTİYACINIZA GÖRE<br /><em>DOĞRUDAN ULAŞIN.</em></h2></div><p>Hizmet, arıza veya bulunduğunuz bölgeye göre ilgili sayfayı açın.</p></div>
+        <div className="intent-columns"><article><span>01</span><h3>Hizmete göre</h3>{servicePages.slice(0, 5).map((item) => <Link href={`/hizmetler/${item.slug}`} key={item.slug}>{item.name}<ArrowUpRight /></Link>)}<Link className="intent-all" href="/hizmetler">Tüm hizmetler</Link></article><article><span>02</span><h3>Arızaya göre</h3>{problemPages.slice(0, 5).map((item) => <Link href={`/cozumler/${item.slug}`} key={item.slug}>{item.name}<ArrowUpRight /></Link>)}<Link className="intent-all" href="/cozumler">Tüm çözümler</Link></article><article><span>03</span><h3>Bölgeye göre</h3>{neighborhoods.slice(0, 5).map((item) => <Link href={`/bolgeler/${item.slug}`} key={item.slug}>{item.name} Çekici<ArrowUpRight /></Link>)}<Link className="intent-all" href="/hizmet-bolgeleri">Tüm bölgeler</Link></article></div>
       </section>
 
       <section className="location-section section-pad" id="iletisim">
-        <div className="location-copy"><small>KONUMLA GELİN</small><h2>TEPEÜSTÜ,<br />ÜMRANİYE.</h2><p>Alemdağ Caddesi, Tepeüstü, Öztürk Sokak No:44. Haritayı kullanın veya tek dokunuşla yol tarifini başlatın.</p><a className="map-directions" href={mapsUrl} target="_blank" rel="noreferrer"><MapPin /> YOL TARİFİ AL <ArrowUpRight /></a><div className="map-nap"><span><b>Telefon</b><a href={`tel:${phone}`}>0541 823 88 15</a></span><span><b>Çalışma saatleri</b>7 gün 24 saat açık</span></div></div>
-        <div className="map-frame"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.4951867261657!2d29.1347147!3d41.0144211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac9cecced9033%3A0x89c0b802aa950ac5!2sCanpolat%20Oto%20Kurtarma!5e0!3m2!1str!2sus!4v1789825146876!5m2!1str!2sus" width="600" height="450" style={{border:0}} allowFullScreen loading="eager" referrerPolicy="strict-origin-when-cross-origin" title="Canpolat Oto Kurtarma konumu" /><a href={mapsUrl} target="_blank" rel="noreferrer">Google Haritalar’da aç <ArrowUpRight /></a></div>
+        <div className="location-copy"><small>ŞİLE’DE BİZE ULAŞIN</small><h2>TEK DOKUNUŞLA<br /><em>YOL TARİFİ.</em></h2><p>Google Haritalar kaydımızı açın, yol tarifi alın veya bulunduğunuz konumu WhatsApp’tan gönderin.</p><a className="map-directions" href={siteConfig.mapsUrl} target="_blank" rel="noreferrer"><MapPin /> GOOGLE HARİTALAR’DA AÇ <ArrowUpRight /></a><div className="map-nap"><span><b>Telefon</b><a href={`tel:${siteConfig.phone}`}>{siteConfig.phoneDisplay}</a></span><span><b>Çalışma saatleri</b>7 gün 24 saat</span><span><b>Hizmet merkezi</b>{siteConfig.locationLabel}</span></div></div>
+        <div className="map-frame"><iframe src={siteConfig.mapsEmbed} width="600" height="450" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="strict-origin-when-cross-origin" title="Şile Çekici Hızır konumu" /><a href={siteConfig.mapsUrl} target="_blank" rel="noreferrer">Yol tarifi al <ArrowUpRight /></a></div>
       </section>
 
-      <section className="faq-section section-pad"><div className="section-heading"><div><small>SIK SORULANLAR</small><h2>YOLA ÇIKMADAN<br />NETLEŞTİRELİM.</h2></div><p>Çekici çağırmadan önce en çok merak edilen konular.</p></div><div className="faq-list">{faqs.map((faq,i)=><details key={faq.q}><summary><span>0{i+1}</span>{faq.q}<b>+</b></summary><p>{faq.a}</p></details>)}</div></section>
+      <section className="faq-section section-pad" id="sss"><div className="section-heading"><div><small>SIK SORULANLAR</small><h2>ARAMADAN ÖNCE<br /><em>MERAK EDİLENLER.</em></h2></div><p>Konumunuzu ve aracın durumunu ilettiğinizde süre ve fiyatı daha hızlı netleştirebiliriz.</p></div><div className="faq-list">{faqs.map((faq, index) => <details key={faq.q}><summary><span>0{index + 1}</span>{faq.q}<b>+</b></summary><p>{faq.a}</p></details>)}</div></section>
 
-      <section className="final-cta"><div><small>İHTİYACINIZ OLDUĞUNDA</small><h2>TEK TELEFON.<br /><em>NET ÇÖZÜM.</em></h2></div><a href={`tel:${phone}`}><Phone /> 0541 823 88 15 <ArrowUpRight /></a></section>
-      <footer className="footer"><div className="brand"><BrandLogo footer /></div><address><a href={mapsUrl} target="_blank" rel="noreferrer">Alemdağ Caddesi, Tepeüstü<br />Öztürk Sk. No:44, Ümraniye / İstanbul</a></address><div><a href={`tel:${phone}`}>0541 823 88 15</a><small>7 gün 24 saat açık</small></div></footer>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({"@context":"https://schema.org","@type":"AutomotiveBusiness","@id":"https://canpolatotokurtarma.com/#business",name:"Canpolat Oto Kurtarma",url:"https://canpolatotokurtarma.com",telephone:"+90 541 823 88 15",logo:"https://canpolatotokurtarma.com/canpolat-logo-transparent.png",image:"https://canpolatotokurtarma.com/canpolat-oto-kurtarma-hero.png",priceRange:"$$",openingHours:"Mo-Su 00:00-23:59",openingHoursSpecification:{"@type":"OpeningHoursSpecification",dayOfWeek:["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],opens:"00:00",closes:"23:59"},geo:{"@type":"GeoCoordinates",latitude:41.0144211,longitude:29.1347147},hasMap:mapsUrl,aggregateRating:{"@type":"AggregateRating",ratingValue:"5.0",reviewCount:"85"},address:{"@type":"PostalAddress",streetAddress:"Alemdağ Caddesi, Tepeüstü, Öztürk Sk. No:44",addressLocality:"Ümraniye",addressRegion:"İstanbul",postalCode:"34764",addressCountry:"TR"},areaServed:{"@type":"City",name:"İstanbul"},contactPoint:{"@type":"ContactPoint",telephone:"+90 541 823 88 15",contactType:"customer service",availableLanguage:"Turkish"}})}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage",mainEntity:faqs.map(faq=>({"@type":"Question",name:faq.q,acceptedAnswer:{"@type":"Answer",text:faq.a}}))})}} />
+      <section className="final-cta"><div><small>ŞİLE’DE YOLDA MI KALDINIZ?</small><h2>ŞİMDİ ARAYIN.<br /><em>HEMEN ÇIKALIM.</em></h2></div><a href={`tel:${siteConfig.phone}`}><Phone /> {siteConfig.phoneDisplay} <ArrowUpRight /></a></section>
+      <footer className="footer"><div className="brand"><BrandLogo footer /></div><div className="footer-name"><b>{siteConfig.shortName}</b><span>7/24 oto çekici ve yol yardım</span></div><address><a href={siteConfig.mapsUrl} target="_blank" rel="noreferrer">Şile / İstanbul<br />Google Haritalar’da yol tarifi</a></address><div><a href={`tel:${siteConfig.phone}`}>{siteConfig.phoneDisplay}</a><small>7 gün 24 saat açık</small></div></footer>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "AutomotiveBusiness", "@id": `${siteConfig.domain}/#business`, name: siteConfig.name, url: siteConfig.domain, telephone: siteConfig.phone, logo: `${siteConfig.domain}${siteConfig.logo}`, image: `${siteConfig.domain}${siteConfig.logo}`, priceRange: "₺₺", openingHours: "Mo-Su 00:00-23:59", geo: { "@type": "GeoCoordinates", latitude: siteConfig.latitude, longitude: siteConfig.longitude }, hasMap: siteConfig.mapsUrl, address: { "@type": "PostalAddress", addressLocality: "Şile", addressRegion: "İstanbul", addressCountry: "TR" }, areaServed: neighborhoods.map((area) => ({ "@type": "Place", name: `${area.name}, Şile` })), contactPoint: { "@type": "ContactPoint", telephone: siteConfig.phone, contactType: "customer service", availableLanguage: "Turkish" } }) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((faq) => ({ "@type": "Question", name: faq.q, acceptedAnswer: { "@type": "Answer", text: faq.a } })) }) }} />
     </main>
   );
 }

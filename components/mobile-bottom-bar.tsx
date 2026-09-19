@@ -1,8 +1,7 @@
 import { MapPin, PhoneCall } from "lucide-react";
+import { siteConfig } from "@/lib/site-config";
 
-const phone = "+905418238815";
-const mapsUrl = "https://maps.app.goo.gl/ptUMNrqeF2E79wwt6?g_st=iwb";
-const wpUrl = "https://wa.me/905418238815?text=Merhaba,%20yolda%20kald%C4%B1m,%20oto%20%C3%A7ekici%20talep%20ediyorum.%20Konumum:";
+const { phone, phoneDisplay, mapsUrl, whatsapp: wpUrl } = siteConfig;
 
 export function MobileBottomBar() {
   return (
@@ -24,13 +23,13 @@ export function MobileBottomBar() {
       <a
         className="mob-btn mob-btn-call"
         href={`tel:${phone}`}
-        aria-label="0541 823 88 15'i Hemen Ara"
+        aria-label={`${phoneDisplay} numarasını hemen ara`}
       >
         <div className="mob-call-pulse-ring" aria-hidden="true" />
         <PhoneCall size={21} className="mob-call-icon" />
         <span className="mob-call-text">
           <strong className="mob-call-title">HEMEN ARA</strong>
-          <span className="mob-call-number">0541 823 88 15</span>
+          <span className="mob-call-number">{phoneDisplay}</span>
         </span>
       </a>
 

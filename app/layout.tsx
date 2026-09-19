@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { MobileBottomBar } from "@/components/mobile-bottom-bar";
+import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://canpolatotokurtarma.com"),
-  title: { default: "Canpolat Oto Kurtarma | İstanbul 7/24 Çekici", template: "%s | Canpolat Oto Kurtarma" },
-  description: "İstanbul genelinde 7/24 oto çekici, ahtapot vinç ve yol yardım hizmeti. Hemen arayın: 0541 823 88 15.",
+  metadataBase: new URL(siteConfig.domain),
+  title: { default: "Şile Çekici | 7/24 Hızır Oto Kurtarıcı", template: "%s | Şile Çekici Hızır" },
+  description: "Şile, Ağva ve çevresinde 7/24 oto çekici, oto kurtarma ve yol yardım. Hemen arayın: 0542 103 01 88.",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   alternates: { canonical: "/" },
   robots: {
@@ -16,15 +17,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "tr_TR",
-    url: "https://canpolatotokurtarma.com",
-    siteName: "Canpolat Oto Kurtarma",
-    title: "Canpolat Oto Kurtarma | İstanbul 7/24 Çekici",
-    description: "İstanbul genelinde 7/24 oto çekici, oto kurtarma, ahtapot vinç ve yol yardım hizmeti.",
+    url: siteConfig.domain,
+    siteName: siteConfig.name,
+    title: "Şile Çekici | 7/24 Hızır Oto Kurtarıcı",
+    description: "Şile, Ağva ve tüm mahallelerde 7/24 oto çekici, oto kurtarma ve yol yardım.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Canpolat Oto Kurtarma | İstanbul 7/24 Çekici",
-    description: "İstanbul genelinde 7/24 oto çekici, oto kurtarma, ahtapot vinç ve yol yardım hizmeti.",
+    title: "Şile Çekici | 7/24 Hızır Oto Kurtarıcı",
+    description: "Şile ve çevresinde 7/24 oto çekici, oto kurtarma ve yol yardım.",
   },
 };
 
