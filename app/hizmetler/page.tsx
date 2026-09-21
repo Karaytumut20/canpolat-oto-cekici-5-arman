@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { SeoDirectory } from "@/components/seo-directory";
-import { routePages, servicePages } from "@/lib/seo-content";
-export const metadata:Metadata={title:"Şile Oto Kurtarma Hizmetleri | 7/24 Çekici",description:"Şile ve çevresinde oto çekici, oto kurtarma, yol yardım, akü takviyesi ve araç taşıma hizmetleri."};
-export default function Page(){return <SeoDirectory eyebrow="HİZMET REHBERİ" title="OTO KURTARMA HİZMETLERİ" intro="Aracınıza ve bulunduğunuz duruma uygun hizmeti inceleyin. Emin değilseniz arayın; doğru ekipmanı birlikte belirleyelim." groups={[{title:"Hizmetler",links:servicePages.map(x=>({name:x.name,href:`/hizmetler/${x.slug}`,detail:x.short}))},{title:"Yoğun hizmet güzergâhları",links:routePages.map(x=>({name:x.name,href:`/guzergahlar/${x.slug}`}))}]}/>}
+import { servicesData } from "@/lib/services-data";
+import { locationPages } from "@/lib/locations-data";
+import { siteConfig } from "@/lib/site-config";
+export const metadata:Metadata={title:"Oto Çekici ve Yol Yardım Hizmetleri",description:"Arman Oto Kurtarma'nın oto çekici, oto kurtarma, acil çekici, akü takviye, lastik yol yardımı ve araç taşıma hizmetlerini inceleyin.",alternates:{canonical:`${siteConfig.domain}/hizmetler`}};
+export default function Page(){return <SeoDirectory eyebrow="ARMAN OTO KURTARMA" title="OTO ÇEKİCİ VE YOL YARDIM HİZMETLERİ" intro="Aracın bulunduğu yer, yürür durumda olup olmadığı ve ulaşılacak adres doğru ekipmanı belirler. İhtiyacınıza uygun hizmetin kapsamını inceleyin; emin değilseniz konum ve fotoğraf gönderin." groups={[{title:"Araç kurtarma ve taşıma",links:servicesData.map(x=>({name:x.name,href:`/hizmetler/${x.slug}`,detail:x.description}))},{title:"Öncelikli hizmet bölgeleri",links:locationPages.filter(x=>x.district==="Çekmeköy"||x.district==="Üsküdar").slice(0,12).map(x=>({name:x.name,href:`/${x.slug}`,detail:x.description}))}]}/>}

@@ -1,15 +1,17 @@
 import type { MetadataRoute } from "next";
-import { serviceAreas } from "@/lib/service-areas";
-import { problemPages, routePages, servicePages } from "@/lib/seo-content";
+import { locationPages } from "@/lib/locations-data";
+import { servicesData } from "@/lib/services-data";
+import { blogPosts } from "@/lib/blog-data";
+import { siteConfig } from "@/lib/site-config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://canpolatotokurtarma.com";
-  const districts = serviceAreas.filter(area => area.type === "ilce");
-  const localServices = servicePages.slice(0, 6);
-  const hubs = ["hizmetler", "cozumler", "guzergahlar", "hizmet-bolgeleri"].map(path => ({ url:`${base}/${path}`, lastModified:new Date(), changeFrequency:"weekly" as const, priority:.9 }));
-  const services = servicePages.map(item => ({ url:`${base}/hizmetler/${item.slug}`, lastModified:new Date(), changeFrequency:"monthly" as const, priority:.85 }));
-  const problems = problemPages.map(item => ({ url:`${base}/cozumler/${item.slug}`, lastModified:new Date(), changeFrequency:"monthly" as const, priority:.8 }));
-  const routes = routePages.map(item => ({ url:`${base}/guzergahlar/${item.slug}`, lastModified:new Date(), changeFrequency:"monthly" as const, priority:.8 }));
-  const local = districts.flatMap(area => localServices.map(service => ({ url:`${base}/yerel-hizmet/${area.slug.replace("-oto-cekici","")}/${service.slug}`, lastModified:new Date(), changeFrequency:"monthly" as const, priority:.75 })));
-  return [{ url: base, lastModified: new Date(), changeFrequency: "weekly", priority: 1 }, ...hubs, ...services, ...problems, ...routes, ...serviceAreas.map(area => ({ url: `${base}/bolgeler/${area.slug}`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: area.type === "mahalle" ? .7 : .85 })), ...local];
+  const updated = new Date();
+  const route = (path: string, priority: number, changeFrequency: "weekly" | "monthly") => ({ url: `${siteConfig.domain}${path}`, lastModified: updated, changeFrequency, priority });
+  return [
+    route("", 1, "weekly"),
+    ...["/hizmetler", "/hizmet-bolgeleri", "/blog", "/hakkimizda", "/iletisim"].map((path) => route(path, .85, "weekly")),
+    ...servicesData.map((item) => route(`/hizmetler/${item.slug}`, .85, "monthly")),
+    ...locationPages.map((item) => route(`/${item.slug}`, item.district === "Çekmeköy" || item.district === "Üsküdar" ? .9 : .75, "monthly")),
+    ...blogPosts.map((item) => route(`/blog/${item.slug}`, .72, "monthly")),
+  ];
 }

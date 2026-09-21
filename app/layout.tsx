@@ -5,8 +5,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.domain),
-  title: { default: "Şile Çekici | 7/24 Hızır Oto Kurtarıcı", template: "%s | Şile Çekici Hızır" },
-  description: "Şile, Ağva ve çevresinde 7/24 oto çekici, oto kurtarma ve yol yardım. Hemen arayın: 0542 103 01 88.",
+  title: "Çekmeköy Oto Çekici | Arman Oto Kurtarma",
+  description: "Çekmeköy ve Üsküdar'da 7/24 oto çekici, oto kurtarma ve yol yardım. Soğukpınar merkezli Arman Oto Kurtarma: 0536 213 62 49.",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   alternates: { canonical: "/" },
   robots: {
@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     locale: "tr_TR",
     url: siteConfig.domain,
     siteName: siteConfig.name,
-    title: "Şile Çekici | 7/24 Hızır Oto Kurtarıcı",
-    description: "Şile, Ağva ve tüm mahallelerde 7/24 oto çekici, oto kurtarma ve yol yardım.",
+    title: "Çekmeköy Oto Çekici | Arman Oto Kurtarma",
+    description: "Çekmeköy, Üsküdar ve çevre mahallelerde 7/24 oto çekici, oto kurtarma ve yol yardım.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Şile Çekici | 7/24 Hızır Oto Kurtarıcı",
-    description: "Şile ve çevresinde 7/24 oto çekici, oto kurtarma ve yol yardım.",
+    title: "Çekmeköy Oto Çekici | Arman Oto Kurtarma",
+    description: "Çekmeköy ve Üsküdar'da 7/24 oto çekici, oto kurtarma ve yol yardım.",
   },
 };
 
