@@ -33,9 +33,10 @@ export default function Home() {
         <Image className="hero-image" src={siteConfig.hero} alt="İstanbul'da kayar kasa ile araç taşıyan oto kurtarma aracı" fill priority sizes="100vw" />
         <div className="hero-overlay" />
         <div className="hero-route" aria-hidden="true">ÇEKMEKÖY · SOĞUKPINAR · TAŞDELEN · ÜSKÜDAR · ÇENGELKÖY · ACIBADEM</div>
+        <div className="hero-live-card"><span className="live-dot" /><div><small>7/24 AKTİF EKİP</small><strong>ÇEKMEKÖY · ÜSKÜDAR</strong></div></div>
         <div className="hero-content">
           <div className="hero-kicker"><span /> İSTANBUL ANADOLU YAKASI · 7/24 YOL YARDIM</div>
-          <h1>ÇEKMEKÖY OTO ÇEKİCİ<br /><em>&amp; OTO KURTARMA</em></h1>
+          <h1>ÇEKMEKÖY 7/24<br />OTO ÇEKİCİ<br /><em>&amp; KURTARMA</em></h1>
           <p className="hero-lead">Aracınız çalışmıyorsa, kaza yaptıysa veya güvenli şekilde servise taşınması gerekiyorsa konumunuzu gönderin. Çekmeköy ve Üsküdar hattında uygun ekipmanı yönlendirelim.</p>
           <div className="hero-actions">
             <a className="hero-primary-call" href={`tel:${siteConfig.phone}`} aria-label={`${siteConfig.phoneDisplay} numarasını ara`}><PhoneCall size={24} /><span><small>TELEFONLA ARA</small>{siteConfig.phoneDisplay}</span></a>

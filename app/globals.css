@@ -676,3 +676,204 @@ body {
   .hero-primary-call,
   .hero-whatsapp-btn { font-size: .72rem; }
 }
+
+/* Split-scene hero — distinct editorial layout */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 54%) 46%;
+  align-items: stretch;
+  background: #06111b;
+}
+
+.hero-image {
+  inset: 0 0 0 auto !important;
+  width: 52% !important;
+  height: 100% !important;
+  object-position: 61% center;
+  z-index: -2;
+}
+
+.hero-overlay {
+  left: 46%;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, #06111b 0%, rgba(6, 17, 27, .92) 8%, rgba(6, 17, 27, .08) 38%, rgba(6, 17, 27, .12) 100%),
+    linear-gradient(0deg, rgba(6, 17, 27, .78), transparent 48%);
+}
+
+.hero::after {
+  width: 56%;
+  right: auto;
+  opacity: .07;
+  mask-image: linear-gradient(90deg, #000, transparent 92%);
+}
+
+.hero-content {
+  grid-column: 1;
+  width: 100%;
+  padding: clamp(4.5rem, 7vw, 7.5rem) clamp(2rem, 5vw, 6.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-content::before {
+  content: "";
+  position: absolute;
+  top: 18%;
+  bottom: 18%;
+  right: 0;
+  width: 1px;
+  background: linear-gradient(transparent, rgba(255, 107, 34, .8), transparent);
+}
+
+.hero h1 {
+  max-width: 720px;
+  font-size: clamp(3.15rem, 5vw, 5.6rem);
+}
+
+.hero-lead { max-width: 610px; }
+
+.hero-live-card {
+  position: absolute;
+  z-index: 3;
+  right: clamp(1.5rem, 4vw, 4.5rem);
+  bottom: clamp(2rem, 5vw, 4.5rem);
+  min-width: 245px;
+  padding: 1rem 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 14px;
+  background: rgba(4, 15, 24, .82);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, .3);
+  backdrop-filter: blur(14px);
+}
+
+.hero-live-card .live-dot { margin: 0; flex: 0 0 8px; }
+.hero-live-card div { display: flex; flex-direction: column; gap: .25rem; }
+.hero-live-card small { color: #a9bbc7; font-size: .62rem; font-weight: 800; letter-spacing: .13em; }
+.hero-live-card strong { font: 900 .9rem var(--heading); letter-spacing: .04em; }
+
+@media (max-width: 1100px) and (min-width: 621px) {
+  .hero { grid-template-columns: 60% 40%; }
+  .hero-image { width: 46% !important; }
+  .hero-overlay { left: 52%; }
+  .hero-content { padding-inline: 2.2rem; }
+  .hero-live-card { right: 1.4rem; bottom: 1.8rem; }
+}
+
+@media (max-width: 620px) {
+  .hero {
+    min-height: auto;
+    display: block;
+    padding: 36svh 0 5.1rem;
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  .hero-image {
+    inset: 0 0 auto 0 !important;
+    width: 100% !important;
+    height: 36svh !important;
+    object-position: 66% center;
+    filter: saturate(1.05) contrast(1.06) brightness(.92);
+  }
+
+  .hero-overlay {
+    inset: 0 0 auto 0;
+    width: 100%;
+    height: 36svh;
+    background: linear-gradient(0deg, rgba(6, 17, 27, .76), transparent 62%);
+  }
+
+  .hero::after {
+    width: 100%;
+    height: 36svh;
+    opacity: .05;
+    mask-image: linear-gradient(180deg, #000, transparent 90%);
+  }
+
+  .hero-content {
+    width: 100%;
+    margin: -26px 0 0;
+    padding: 2rem 1.15rem 1.65rem;
+    display: block;
+    border: 0;
+    border-radius: 28px 28px 0 0;
+    background: linear-gradient(180deg, #f8fafb, var(--paper));
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  .hero-content::before { display: none; }
+
+  .hero-kicker {
+    margin-bottom: .85rem;
+    color: #d94b0a;
+  }
+
+  .hero h1 {
+    max-width: 340px;
+    color: var(--ink);
+    font-size: clamp(2.3rem, 11.6vw, 3rem);
+    line-height: .89;
+  }
+
+  .hero h1 em { color: #ef5714; }
+
+  .hero-lead {
+    margin: 1.15rem 0;
+    color: #4d5f6b;
+    font-size: .93rem;
+    line-height: 1.58;
+  }
+
+  .hero-actions {
+    grid-template-columns: 1fr;
+    gap: .65rem;
+  }
+
+  .hero-primary-call,
+  .hero-whatsapp-btn {
+    min-height: 62px;
+    padding-inline: 1rem;
+    font-size: .85rem;
+  }
+
+  .hero-primary-call {
+    color: #fff;
+    box-shadow: 0 12px 26px rgba(239, 87, 20, .22);
+  }
+
+  .hero-whatsapp-btn {
+    background: #fff;
+    color: #0e2a20;
+    border-color: rgba(28, 154, 83, .55);
+    box-shadow: 0 10px 24px rgba(10, 35, 26, .08);
+  }
+
+  .hero-live-card {
+    top: calc(36svh - 58px);
+    right: 1rem;
+    bottom: auto;
+    min-width: 0;
+    padding: .7rem .85rem;
+    border: 0;
+    border-radius: 999px;
+    background: var(--red);
+    box-shadow: 0 10px 25px rgba(226, 73, 9, .28);
+  }
+
+  .hero-live-card .live-dot {
+    background: #fff;
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, .18);
+  }
+
+  .hero-live-card small { display: none; }
+  .hero-live-card strong { color: #fff; font-size: .72rem; }
+  .scroll-cue,
+  .trust-row { display: none; }
+}
