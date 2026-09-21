@@ -544,3 +544,135 @@ body {
     backdrop-filter: blur(14px);
   }
 }
+
+/* Mobile hero — image-first composition with a compact dispatch card */
+@media (max-width: 620px) {
+  .hero {
+    min-height: auto;
+    display: block;
+    padding: 30svh 0 5.25rem;
+    background: #07131d;
+  }
+
+  .hero-image {
+    object-position: 68% top;
+    filter: saturate(1.02) contrast(1.08) brightness(.9);
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(180deg, rgba(4, 15, 24, .06) 0%, rgba(4, 15, 24, .18) 24%, #07131d 48%, #07131d 100%),
+      linear-gradient(90deg, rgba(4, 15, 24, .35), transparent 72%);
+  }
+
+  .hero::after {
+    opacity: .06;
+    background-size: 48px 48px;
+    mask-image: linear-gradient(180deg, #000, transparent 42%);
+  }
+
+  .hero-content {
+    width: auto;
+    margin: 0 .85rem;
+    padding: 1.15rem 1rem 1.2rem;
+    position: relative;
+    border: 1px solid rgba(164, 190, 208, .2);
+    border-radius: 22px;
+    background: linear-gradient(155deg, rgba(12, 35, 51, .92), rgba(4, 15, 24, .96));
+    box-shadow: 0 22px 55px rgba(0, 0, 0, .32);
+    backdrop-filter: blur(16px) saturate(1.15);
+  }
+
+  .hero-kicker {
+    margin-bottom: .8rem;
+    gap: .5rem;
+    font-size: .62rem;
+    line-height: 1.45;
+    letter-spacing: .13em;
+  }
+
+  .hero-kicker span { width: 24px; flex: 0 0 24px; }
+
+  .hero h1 {
+    max-width: 330px;
+    font-size: clamp(2.15rem, 10.7vw, 2.75rem);
+    line-height: .91;
+    letter-spacing: -.045em;
+  }
+
+  .hero-lead {
+    margin: 1rem 0 1.05rem;
+    color: #c8d5de;
+    font-size: .9rem;
+    line-height: 1.55;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1.08fr .92fr;
+    gap: .6rem;
+  }
+
+  .hero-primary-call,
+  .hero-whatsapp-btn {
+    min-width: 0;
+    min-height: 66px;
+    padding: .65rem .55rem;
+    gap: .4rem;
+    font-size: .73rem;
+    line-height: 1.15;
+    border-radius: 12px;
+  }
+
+  .hero-primary-call svg,
+  .hero-whatsapp-btn .whatsapp-mark {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+  }
+
+  .hero-primary-call span,
+  .hero-whatsapp-btn span:not(.whatsapp-mark) { min-width: 0; }
+
+  .hero-primary-call span {
+    white-space: normal;
+    font-size: 0;
+  }
+
+  .hero-primary-call span::after {
+    content: "HEMEN ARA";
+    font-size: .82rem;
+    line-height: 1;
+  }
+
+  .hero-actions small {
+    margin-bottom: .18rem;
+    font-size: .5rem;
+    letter-spacing: .1em;
+  }
+
+  .trust-row {
+    display: none;
+  }
+
+  .trust-row span {
+    min-width: 0;
+    padding: .55rem .4rem;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    font-size: .64rem;
+    line-height: 1.25;
+  }
+
+  .trust-row svg { width: 15px; flex: 0 0 15px; }
+  .scroll-cue { display: none; }
+}
+
+@media (max-width: 370px) {
+  .hero { padding-top: 27svh; }
+  .hero-content { margin-inline: .65rem; }
+  .hero h1 { font-size: 2rem; }
+  .hero-primary-call,
+  .hero-whatsapp-btn { font-size: .72rem; }
+}
