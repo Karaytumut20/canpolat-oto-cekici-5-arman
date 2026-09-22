@@ -558,6 +558,11 @@ body {
 .area-content article .text-white,
 .area-content article strong.text-white { color: #10283a; }
 
+.services .section-heading > p,
+.search-intents .section-heading > p { color: #4d5f6b; }
+.search-intents .intent-columns article > span,
+.search-intents .intent-columns .intent-all { color: #a83b08; }
+
 @media (max-width: 980px) {
   .site-header { min-height: 78px; }
   .service-grid,
@@ -1239,7 +1244,13 @@ body {
 
 .area-page .area-content article .faq-list summary::-webkit-details-marker { display: none; }
 .area-page .area-content article .faq-list .faq-number { color: #b94a16; font-size: .72rem; font-weight: 900; }
-.area-page .area-content article .faq-list .faq-question { min-width: 0; overflow-wrap: anywhere; }
+.area-page .area-content article .faq-list .faq-question {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: #19364a;
+  font-size: inherit;
+  font-weight: inherit;
+}
 .area-page .area-content article .faq-list .faq-toggle {
   width: 1.7rem;
   height: 1.7rem;
@@ -1260,6 +1271,67 @@ body {
 .area-page .service-process b { color: #b94a16; }
 .area-page .service-process strong { color: #19364a; }
 .area-page .nearby { background: linear-gradient(145deg, #0d2535, #071722); }
+
+/* Blog articles share the light inner-page palette, with readable editorial type. */
+.blog-detail-page .blog-article { min-width: 0; }
+.blog-detail-page .area-content article .blog-summary {
+  max-width: none;
+  margin: 0 0 2.5rem;
+  padding: 1.25rem 1.4rem;
+  border: 1px solid #cbdce5;
+  border-left: 4px solid #c75a20;
+  border-radius: 12px;
+  background: #fff;
+  color: #284356;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.7;
+}
+.blog-detail-page .area-content article .blog-section-title {
+  margin: 0 0 1rem;
+  color: #142b3b;
+  font-size: clamp(1.55rem, 3vw, 2.3rem);
+  line-height: 1.18;
+  letter-spacing: -.035em;
+  overflow-wrap: anywhere;
+}
+.blog-detail-page .area-content article .blog-paragraph {
+  margin: 0 0 1rem;
+  color: #465966;
+  font-size: .98rem;
+  line-height: 1.75;
+}
+.blog-detail-page .blog-checklist {
+  margin: 1.5rem 0;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid #254e66;
+  border-radius: 12px;
+  background: #12364d;
+}
+.blog-detail-page .area-content article .blog-checklist h3 {
+  margin: 0 0 .75rem;
+  color: #ffb987;
+  font: 800 .8rem/1.4 var(--body);
+  letter-spacing: .09em;
+}
+.blog-detail-page .blog-checklist ul { margin: 0; padding: 0; }
+.blog-detail-page .blog-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: .7rem;
+  padding: .5rem 0;
+  border-color: rgba(215, 231, 239, .18);
+  color: #e7f0f4;
+  font-size: .9rem;
+  line-height: 1.55;
+}
+.blog-detail-page .blog-checklist li svg { color: #ff9a62; }
+.blog-detail-page .area-content article .blog-faq-heading {
+  margin: 0 0 1.3rem;
+  color: #142b3b;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  line-height: 1.25;
+}
 
 @media (max-width: 760px) {
   .area-page .area-content article .faq-list { grid-template-columns: minmax(0, 1fr); }

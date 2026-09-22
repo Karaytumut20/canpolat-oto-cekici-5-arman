@@ -6,10 +6,8 @@ import {
   Calendar,
   CheckCircle2,
   Clock,
-  MapPin,
   Phone,
   PhoneCall,
-  Shield,
   Tag,
   User,
 } from "lucide-react";
@@ -108,7 +106,7 @@ export default async function BlogPostDetailPage({
     .filter((l): l is NonNullable<typeof l> => Boolean(l));
 
   return (
-    <main className="blog-page">
+    <main className="area-page blog-page blog-detail-page">
       {/* Header */}
       <header className="site-header">
         <Link href="/" className="brand" aria-label="Arman Oto Kurtarma Ana Sayfa">
@@ -181,30 +179,30 @@ export default async function BlogPostDetailPage({
 
       {/* Article Content Body */}
       <section className="area-content section-pad">
-        <article className="prose-slate">
-          <p className="text-lg text-slate-300 leading-relaxed font-medium mb-8 p-4 rounded-lg bg-slate-900/60 border border-slate-800">
+        <article className="blog-article">
+          <p className="blog-summary">
             {post.summary}
           </p>
 
           {post.sections.map((sec, idx) => (
             <div key={idx} className="mb-10">
-              <h2 className="text-2xl font-bold text-white mb-4 tracking-tight">
+              <h2 className="blog-section-title">
                 {sec.heading}
               </h2>
               {sec.paragraphs.map((p, pIdx) => (
-                <p key={pIdx} className="text-slate-400 text-sm leading-relaxed mb-4">
+                <p key={pIdx} className="blog-paragraph">
                   {p}
                 </p>
               ))}
               {sec.checklist && (
-                <div className="p-4 rounded-md bg-slate-900/90 border border-slate-800 my-4">
-                  <h3 className="text-xs font-bold text-amber-500 uppercase tracking-wider mb-2">
+                <div className="blog-checklist">
+                  <h3>
                     Kontrol Listesi
                   </h3>
-                  <ul className="space-y-1.5 text-xs text-slate-300 m-0 p-0 list-none">
+                  <ul>
                     {sec.checklist.map((c, cIdx) => (
-                      <li key={cIdx} className="flex items-center gap-2">
-                        <CheckCircle2 size={14} className="text-amber-500 shrink-0" />
+                      <li key={cIdx}>
+                        <CheckCircle2 size={16} />
                         <span>{c}</span>
                       </li>
                     ))}
@@ -216,17 +214,18 @@ export default async function BlogPostDetailPage({
 
           {/* Article FAQs */}
           <div className="mt-12">
-            <h3 className="text-2xl font-bold text-white mb-6">
+            <h3 className="blog-faq-heading">
               Konuyla İlgili Sıkça Sorulanlar
             </h3>
             <div className="faq-list">
               {post.faqs.map((faq, i) => (
-                <details key={faq.q} className="border-b border-slate-800">
-                  <summary className="cursor-pointer py-4 flex items-center justify-between text-base font-bold text-white">
-                    <span>0{i + 1}. {faq.q}</span>
-                    <span className="text-amber-500 text-xl font-mono">+</span>
+                <details key={faq.q}>
+                  <summary>
+                    <span className="faq-number">0{i + 1}</span>
+                    <span className="faq-question">{faq.q}</span>
+                    <b className="faq-toggle">+</b>
                   </summary>
-                  <p className="text-slate-400 text-sm pb-4 pl-6 leading-relaxed m-0">
+                  <p>
                     {faq.a}
                   </p>
                 </details>
