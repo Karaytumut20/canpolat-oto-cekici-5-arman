@@ -1,7 +1,7 @@
 export type LocationPageData = {
   slug: string;
   name: string;
-  district: "Çekmeköy" | "Üsküdar" | "Çevre İlçe" | "Bağlantı Yolu" | "Özel Arama";
+  district: "Çekmeköy" | "Üsküdar" | "Ümraniye" | "Sancaktepe" | "Sultanbeyli" | "Çevre İlçe" | "Bağlantı Yolu" | "Özel Arama";
   districtSlug: string;
   title: string;
   description: string;
@@ -19,7 +19,7 @@ export type LocationPageData = {
   nearbySlugs: string[];
 };
 
-export const locationPages: LocationPageData[] = [
+const allLocationPages: LocationPageData[] = [
   // ===================== ÇEKMEKÖY BÖLGESİ =====================
   {
     slug: "cekmekoy-oto-cekici",
@@ -27,7 +27,7 @@ export const locationPages: LocationPageData[] = [
     district: "Çekmeköy",
     districtSlug: "cekmekoy",
     title: "Çekmeköy Oto Çekici | 7/24 En Yakın Arman Oto Kurtarma",
-    description: "Çekmeköy oto çekici ve yol yardım hizmeti. Soğukpınar, Madenler, Taşdelen ve Şile Otoyolu çevresinde konuma göre hızlı intikal. işlem öncesi fiyat bilgisi, özenli taşıma: 0536 213 62 49.",
+    description: "Çekmeköy oto çekici ve yol yardım hizmeti. Soğukpınar, Madenler, Taşdelen ve Şile Otoyolu çevresinde konuma göre hızlı intikal. işlem öncesi fiyat bilgisi, özenli taşıma: 0536 998 74 52.",
     h1: "Çekmeköy Oto Çekici ve 7/24 Yol Yardım",
     heroKicker: "ÇEKMEKÖY MERKEZ & TÜM MAHALLELER",
     landmark: "Çekmeköy Madenler Meydanı, Metro İstasyonu & Şile Otoyolu Bağlantısı",
@@ -74,7 +74,7 @@ export const locationPages: LocationPageData[] = [
     district: "Çekmeköy",
     districtSlug: "cekmekoy",
     title: "Çekmeköy Oto Kurtarma | Ağır Hasar & Vinçli Kurtarma Arman",
-    description: "Çekmeköy oto kurtarma servisi. Yoldan çıkan, şarampole kayan, tekeri kilitli veya kazalı araçlara ahtapot vinç ve kayar kasa ile hasarsız müdahale: 0536 213 62 49.",
+    description: "Çekmeköy oto kurtarma servisi. Yoldan çıkan, şarampole kayan, tekeri kilitli veya kazalı araçlara ahtapot vinç ve kayar kasa ile hasarsız müdahale: 0536 998 74 52.",
     h1: "Çekmeköy Oto Kurtarma ve Kazalı Araç Çekimi",
     heroKicker: "AĞIR HASAR, VİNÇLİ KURTARMA & ŞARAMPOLE MÜDAHALE",
     landmark: "Çekmeköy Çevre Yolu, Ormanlık Rotalar ve Köprülü Kavşaklar",
@@ -109,7 +109,7 @@ export const locationPages: LocationPageData[] = [
     district: "Çekmeköy",
     districtSlug: "cekmekoy",
     title: "Soğukpınar Oto Çekici | konuma göre Yanınızda Arman Oto Kurtarma",
-    description: "Çekmeköy Soğukpınar Mahallesi oto çekici hizmeti. Güvercin Sokak merkezli filomuzla konuma göre yanınızdayız. En hızlı yerel çekici: 0536 213 62 49.",
+    description: "Çekmeköy Soğukpınar Mahallesi oto çekici hizmeti. Güvercin Sokak merkezli filomuzla konuma göre yanınızdayız. En hızlı yerel çekici: 0536 998 74 52.",
     h1: "Çekmeköy Soğukpınar Oto Çekici ve Yol Yardım",
     heroKicker: "MERKEZ OFİSİMİZİN BULUNDUĞU MAHALLE · EN HIZLI VARIŞ",
     landmark: "Soğukpınar Güvercin Sokak No:4/A, Çekmeköy",
@@ -140,7 +140,7 @@ export const locationPages: LocationPageData[] = [
     district: "Çekmeköy",
     districtSlug: "cekmekoy",
     title: "Taşdelen Oto Çekici | 7/24 Acil Yol Yardım Arman Oto Kurtarma",
-    description: "Taşdelen oto çekici ve yol yardım hizmeti. Taşdelen Meydanı, Turgut Özal Bulvarı ve Şile Otoyolu üzerinde konuma göre hızlı çekici: 0536 213 62 49.",
+    description: "Taşdelen oto çekici ve yol yardım hizmeti. Taşdelen Meydanı, Turgut Özal Bulvarı ve Şile Otoyolu üzerinde konuma göre hızlı çekici: 0536 998 74 52.",
     h1: "Taşdelen Oto Çekici ve 7/24 Yol Yardım",
     heroKicker: "TAŞDELEN MEYDANI, TURGUT ÖZAL BULVARI & ŞİLE YOLU",
     landmark: "Taşdelen Meydanı, Çamlık Yolu & Taşdelen Tüneli Girişi",
@@ -167,7 +167,7 @@ export const locationPages: LocationPageData[] = [
     district: "Çekmeköy",
     districtSlug: "cekmekoy",
     title: "Alemdağ Oto Çekici | Çekmeköy 7/24 Arman Oto Kurtarma",
-    description: "Alemdağ oto çekici ve kurtarıcı hizmeti. 130. Sokak, Saray Caddesi, Nişantepe ve Reşadiye bağlantılarında anında çekici desteği: 0536 213 62 49.",
+    description: "Alemdağ oto çekici ve kurtarıcı hizmeti. 130. Sokak, Saray Caddesi, Nişantepe ve Reşadiye bağlantılarında anında çekici desteği: 0536 998 74 52.",
     h1: "Alemdağ Oto Çekici ve Oto Kurtarma",
     heroKicker: "ALEMDAĞ MERKEZ, SARAY CADDESİ & ÇEVRE ROTALAR",
     landmark: "Alemdağ Jandarma, Saray Caddesi & Çekmeköy Devlet Hastanesi Çevresi",
@@ -194,7 +194,7 @@ export const locationPages: LocationPageData[] = [
     district: "Çekmeköy",
     districtSlug: "cekmekoy",
     title: "Madenler Oto Çekici | Metro & Meydan 7/24 Arman Oto Kurtarma",
-    description: "Çekmeköy Madenler oto çekici hizmeti. Madenler metro durağı, Şile Yolu köprüsü ve Ümraniye sınırında anında oto kurtarma: 0536 213 62 49.",
+    description: "Çekmeköy Madenler oto çekici hizmeti. Madenler metro durağı, Şile Yolu köprüsü ve Ümraniye sınırında anında oto kurtarma: 0536 998 74 52.",
     h1: "Çekmeköy Madenler Oto Çekici ve Yol Yardım",
     heroKicker: "MADENLER MEYDANI, METRO İSTASYONU & ÜMRANİYE SINIRI",
     landmark: "Çekmeköy Madenler Metro İstasyonu & Şile Otoyolu Kavşağı",
@@ -221,7 +221,7 @@ export const locationPages: LocationPageData[] = [
     district: "Çekmeköy",
     districtSlug: "cekmekoy",
     title: "Ömerli Oto Çekici | Baraj Yolu & Şile Hattı Arman Oto Kurtarma",
-    description: "Çekmeköy Ömerli oto çekici servisi. Ömerli Barajı çevresi, villalar bölgesi ve Şile Otoyolu Ömerli kavşağında 7/24 kurtarıcı: 0536 213 62 49.",
+    description: "Çekmeköy Ömerli oto çekici servisi. Ömerli Barajı çevresi, villalar bölgesi ve Şile Otoyolu Ömerli kavşağında 7/24 kurtarıcı: 0536 998 74 52.",
     h1: "Ömerli Oto Çekici ve Oto Kurtarma",
     heroKicker: "ÖMERLİ BARAJI, VİLLALAR BÖLGESİ & ŞİLE OTOYOLU",
     landmark: "Ömerli Barajı Girişi, Koçullu Yolu & Ömerli Merkez",
@@ -248,7 +248,7 @@ export const locationPages: LocationPageData[] = [
     district: "Çekmeköy",
     districtSlug: "cekmekoy",
     title: "Reşadiye Oto Çekici | Çekmeköy 7/24 Arman Oto Kurtarma",
-    description: "Reşadiye oto çekici ve yol yardım. Çekmeköy Reşadiye köy içi, Kuzey Marmara bağlantısı ve villa bölgelerinde hızlı çekici: 0536 213 62 49.",
+    description: "Reşadiye oto çekici ve yol yardım. Çekmeköy Reşadiye köy içi, Kuzey Marmara bağlantısı ve villa bölgelerinde hızlı çekici: 0536 998 74 52.",
     h1: "Reşadiye Oto Çekici ve Yol Yardım",
     heroKicker: "REŞADİYE MERKEZ, KUZEY MARMARA BAĞLANTISI & KÖY İÇİ",
     landmark: "Reşadiye Mesire Alanı & Kuzey Marmara Reşadiye Çıkışı",
@@ -275,7 +275,7 @@ export const locationPages: LocationPageData[] = [
     district: "Çekmeköy",
     districtSlug: "cekmekoy",
     title: "Nişantepe Oto Çekici | Özyeğin Üniversitesi & Çevre Yolu Arman",
-    description: "Nişantepe oto çekici ve kurtarma servisi. Özyeğin Üniversitesi kampüs yolu, Şile Yolu ve orman hattında 7/24 çekici desteği: 0536 213 62 49.",
+    description: "Nişantepe oto çekici ve kurtarma servisi. Özyeğin Üniversitesi kampüs yolu, Şile Yolu ve orman hattında 7/24 çekici desteği: 0536 998 74 52.",
     h1: "Nişantepe Oto Çekici ve Yol Yardım",
     heroKicker: "NİŞANTEPE, ÖZYEĞİN ÜNİVERSİTESİ & ORMAN YOLU",
     landmark: "Özyeğin Üniversitesi Kampüsü & Nişantepe Orman Park",
@@ -302,7 +302,7 @@ export const locationPages: LocationPageData[] = [
     district: "Çekmeköy",
     districtSlug: "cekmekoy",
     title: "Çamlık Mahallesi Oto Çekici | Çekmeköy 7/24 Arman Oto Kurtarma",
-    description: "Çekmeköy Çamlık Mahallesi oto çekici ve yol yardım. Şahinbey Caddesi, Çamlık tepesi ve çevre sitelerde anında oto kurtarıcı: 0536 213 62 49.",
+    description: "Çekmeköy Çamlık Mahallesi oto çekici ve yol yardım. Şahinbey Caddesi, Çamlık tepesi ve çevre sitelerde anında oto kurtarıcı: 0536 998 74 52.",
     h1: "Çekmeköy Çamlık Mahallesi Oto Çekici",
     heroKicker: "ŞAHİNBEY CADDESİ, ÇAMLIK MERKEZ & ÇEVRE SİTELER",
     landmark: "Çamlık Parkı, Şahinbey Caddesi & Doğa Parkı Çevresi",
@@ -329,7 +329,7 @@ export const locationPages: LocationPageData[] = [
     district: "Çekmeköy",
     districtSlug: "cekmekoy",
     title: "Mimar Sinan Mahallesi Oto Çekici | Çekmeköy Arman Oto Kurtarma",
-    description: "Çekmeköy Mimar Sinan Mahallesi oto çekici hizmeti. Çavuşbaşı Caddesi ve Mimar Sinan Caddesi üzerinde 7/24 oto kurtarma: 0536 213 62 49.",
+    description: "Çekmeköy Mimar Sinan Mahallesi oto çekici hizmeti. Çavuşbaşı Caddesi ve Mimar Sinan Caddesi üzerinde 7/24 oto kurtarma: 0536 998 74 52.",
     h1: "Mimar Sinan Mahallesi Oto Çekici",
     heroKicker: "MİMAR SİNAN CADDESİ & ÇAVUŞBAŞI BAĞLANTISI",
     landmark: "Mimar Sinan Camii & Çekmeköy Belediyesi Çevresi",
@@ -356,7 +356,7 @@ export const locationPages: LocationPageData[] = [
     district: "Çekmeköy",
     districtSlug: "cekmekoy",
     title: "Hamidiye Mahallesi Oto Çekici | Çekmeköy Arman Oto Kurtarma",
-    description: "Çekmeköy Hamidiye Mahallesi oto çekici ve kurtarıcı. Ulus Pazarı çevresi, Barış Yolu Caddesi'nde 7/24 acil çekici: 0536 213 62 49.",
+    description: "Çekmeköy Hamidiye Mahallesi oto çekici ve kurtarıcı. Ulus Pazarı çevresi, Barış Yolu Caddesi'nde 7/24 acil çekici: 0536 998 74 52.",
     h1: "Hamidiye Mahallesi Oto Çekici ve Yol Yardım",
     heroKicker: "HAMİDİYE MERKEZ, BARIŞ YOLU & ÇEVRE SİTELER",
     landmark: "Çekmeköy Ulus Pazarı Alanı & Hamidiye Kültür Merkezi",
@@ -385,7 +385,7 @@ export const locationPages: LocationPageData[] = [
     district: "Üsküdar",
     districtSlug: "uskudar",
     title: "Üsküdar Oto Çekici | 7/24 En Yakın Arman Oto Kurtarma",
-    description: "Üsküdar oto çekici ve oto kurtarma hizmeti. Altunizade, Çengelköy, Acıbadem, Beylerbeyi ve D-100 bağlantısında konuma göre yanınızdayız: 0536 213 62 49.",
+    description: "Üsküdar oto çekici ve oto kurtarma hizmeti. Altunizade, Çengelköy, Acıbadem, Beylerbeyi ve D-100 bağlantısında konuma göre yanınızdayız: 0536 998 74 52.",
     h1: "Üsküdar Oto Çekici ve 7/24 Yol Yardım",
     heroKicker: "ÜSKÜDAR MERKEZ, BOĞAZ HATTI & 15 TEMMUZ KÖPRÜ BAĞLANTISI",
     landmark: "Üsküdar İskele Meydanı, Mihrimah Sultan Camii & Altunizade Metrobüs",
@@ -424,7 +424,7 @@ export const locationPages: LocationPageData[] = [
     district: "Üsküdar",
     districtSlug: "uskudar",
     title: "Üsküdar Oto Kurtarma | Vinçli & Kazalı Araç Kurtarma Arman",
-    description: "Üsküdar oto kurtarma servisi. Ağır hasarlı, yürümeyen, tekeri kilitli veya virajda savrulan araçlara vinçli ve kayar kasa profesyonel müdahale: 0536 213 62 49.",
+    description: "Üsküdar oto kurtarma servisi. Ağır hasarlı, yürümeyen, tekeri kilitli veya virajda savrulan araçlara vinçli ve kayar kasa profesyonel müdahale: 0536 998 74 52.",
     h1: "Üsküdar Oto Kurtarma ve Vinç Hizmetleri",
     heroKicker: "AĞIR HASAR, VİNÇLİ OTO KURTARMA & DİK RAMPALAR",
     landmark: "Altunizade Kavşağı, Çamlıca Viyadükleri & Libadiye Tüneli",
@@ -434,7 +434,7 @@ export const locationPages: LocationPageData[] = [
     faqs: [
       {
         q: "Üsküdar'da kaza anında ne yapmam gerekir?",
-        a: "Öncelikle can güvenliğinizi sağlayın, kaza alanına reflektör koyun ve gerekiyorsa polis/jandarma çağırın. Ardından 0536 213 62 49 numaramızdan bizi aradığınızda, ekibimiz tutanak sonrası aracı en yakın anlaşmalı servise taşımak üzere derhal yola çıkar."
+        a: "Öncelikle can güvenliğinizi sağlayın, kaza alanına reflektör koyun ve gerekiyorsa polis/jandarma çağırın. Ardından 0536 998 74 52 numaramızdan bizi aradığınızda, ekibimiz tutanak sonrası aracı en yakın anlaşmalı servise taşımak üzere derhal yola çıkar."
       }
     ],
     localGuide: [
@@ -451,7 +451,7 @@ export const locationPages: LocationPageData[] = [
     district: "Üsküdar",
     districtSlug: "uskudar",
     title: "Üsküdar Yol Yardım | 7/24 Akü, Lastik & Çekici Arman",
-    description: "Üsküdar 7/24 acil yol yardım servisi. Akü takviyesi, patlak lastik desteği, yakıt ulaştırma ve acil oto çekici desteği: 0536 213 62 49.",
+    description: "Üsküdar 7/24 acil yol yardım servisi. Akü takviyesi, patlak lastik desteği, yakıt ulaştırma ve acil oto çekici desteği: 0536 998 74 52.",
     h1: "Üsküdar 7/24 Acil Yol Yardım Hizmeti",
     heroKicker: "YERİNDE MARŞ, AKÜ TAKVİYESİ & LASTİK DESTEĞİ",
     landmark: "Üsküdar Meydanı, Marmaray İstasyonu & Harem Sahil",
@@ -478,7 +478,7 @@ export const locationPages: LocationPageData[] = [
     district: "Üsküdar",
     districtSlug: "uskudar",
     title: "Altunizade Oto Çekici | Köprü Katılımı 7/24 Arman Oto Kurtarma",
-    description: "Altunizade oto çekici ve kurtarma servisi. 15 Temmuz Köprüsü çıkışı, Kısıklı Caddesi ve Capitol çevresinde konuma göre acil çekici: 0536 213 62 49.",
+    description: "Altunizade oto çekici ve kurtarma servisi. 15 Temmuz Köprüsü çıkışı, Kısıklı Caddesi ve Capitol çevresinde konuma göre acil çekici: 0536 998 74 52.",
     h1: "Altunizade Oto Çekici ve Yol Yardım",
     heroKicker: "ALTUNİZADE METROBÜS, KÖPRÜ KATILIMI & CAPİTOL ÇEVRESİ",
     landmark: "Capitol AVM, Altunizade Köprülü Kavşağı & İlahiyat Camii",
@@ -505,7 +505,7 @@ export const locationPages: LocationPageData[] = [
     district: "Üsküdar",
     districtSlug: "uskudar",
     title: "Acıbadem Oto Çekici | Üsküdar - Kadıköy Hattı Arman Oto Kurtarma",
-    description: "Acıbadem oto çekici ve yol yardım. Acıbadem Caddesi, Çamlıca Kız Lisesi çevresi ve D-100 bağlantısında 7/24 hasarsız çekici: 0536 213 62 49.",
+    description: "Acıbadem oto çekici ve yol yardım. Acıbadem Caddesi, Çamlıca Kız Lisesi çevresi ve D-100 bağlantısında 7/24 hasarsız çekici: 0536 998 74 52.",
     h1: "Acıbadem Oto Çekici ve Yol Yardım",
     heroKicker: "ACIBADEM CADDESİ, METRO DURAĞI & D-100 BAĞLANTISI",
     landmark: "Acıbadem Caddesi, Çamlıca Bağlantısı & Acıbadem Hastanesi Çevresi",
@@ -532,7 +532,7 @@ export const locationPages: LocationPageData[] = [
     district: "Üsküdar",
     districtSlug: "uskudar",
     title: "Çengelköy Oto Çekici | Sahil & Sırtlar 7/24 Arman Oto Kurtarma",
-    description: "Çengelköy oto çekici ve oto kurtarma. Çengelköy sahili, Havuzbaşı, Bosna Bulvarı ve dar sokaklarda profesyonel kurtarıcı: 0536 213 62 49.",
+    description: "Çengelköy oto çekici ve oto kurtarma. Çengelköy sahili, Havuzbaşı, Bosna Bulvarı ve dar sokaklarda profesyonel kurtarıcı: 0536 998 74 52.",
     h1: "Çengelköy Oto Çekici ve Kurtarıcı",
     heroKicker: "ÇENGELKÖY SAHİLİ, HAVUZBAŞI & BOSNA BULVARI",
     landmark: "Çengelköy Çınaraltı, Kuleli Askeri Lisesi Hattı & Bosna Bulvarı",
@@ -559,7 +559,7 @@ export const locationPages: LocationPageData[] = [
     district: "Üsküdar",
     districtSlug: "uskudar",
     title: "Beylerbeyi Oto Çekici | Saray & Köprü Ayağı Arman Oto Kurtarma",
-    description: "Beylerbeyi oto çekici ve kurtarma desteği. Beylerbeyi Sarayı çevresi, Boğaz Köprüsü ayağı ve tünel çıkışında 7/24 çekici: 0536 213 62 49.",
+    description: "Beylerbeyi oto çekici ve kurtarma desteği. Beylerbeyi Sarayı çevresi, Boğaz Köprüsü ayağı ve tünel çıkışında 7/24 çekici: 0536 998 74 52.",
     h1: "Beylerbeyi Oto Çekici ve Yol Yardım",
     heroKicker: "BEYLERBEYİ SARAYI, BOĞAZ HATTI & KÖPRÜ ALTI",
     landmark: "Beylerbeyi Sarayı, Beylerbeyi Tüneli & Çamlıca Bağlantısı",
@@ -586,7 +586,7 @@ export const locationPages: LocationPageData[] = [
     district: "Üsküdar",
     districtSlug: "uskudar",
     title: "Kısıklı Oto Çekici | Çamlıca Tepesi & Meydan Arman Oto Kurtarma",
-    description: "Kısıklı oto çekici ve yol yardım hizmeti. Kısıklı Meydanı, Büyük Çamlıca Tepesi yolu ve Libadiye kavşağında 7/24 çekici: 0536 213 62 49.",
+    description: "Kısıklı oto çekici ve yol yardım hizmeti. Kısıklı Meydanı, Büyük Çamlıca Tepesi yolu ve Libadiye kavşağında 7/24 çekici: 0536 998 74 52.",
     h1: "Kısıklı Oto Çekici ve Oto Kurtarma",
     heroKicker: "KISIKLI MEYDANI, BÜYÜK ÇAMLICA & LİBADİYE KAVŞAĞI",
     landmark: "Kısıklı Metro Durağı, Çamlıca Kulesi Girişi & Libadiye Tüneli",
@@ -613,7 +613,7 @@ export const locationPages: LocationPageData[] = [
     district: "Üsküdar",
     districtSlug: "uskudar",
     title: "Libadiye Oto Çekici | Tünel & Emaar Çevresi Arman Oto Kurtarma",
-    description: "Libadiye oto çekici ve yol yardım. Libadiye Caddesi, Emaar Square çevresi ve Libadiye Tüneli çıkışında 7/24 hızlı kurtarıcı: 0536 213 62 49.",
+    description: "Libadiye oto çekici ve yol yardım. Libadiye Caddesi, Emaar Square çevresi ve Libadiye Tüneli çıkışında 7/24 hızlı kurtarıcı: 0536 998 74 52.",
     h1: "Libadiye Oto Çekici ve Yol Yardım",
     heroKicker: "LİBADİYE CADDESİ, EMAAR SQUARE & TÜNEL ÇIKIŞI",
     landmark: "Emaar Square AVM, Libadiye Tüneli & Çamlıca Bağlantısı",
@@ -640,7 +640,7 @@ export const locationPages: LocationPageData[] = [
     district: "Üsküdar",
     districtSlug: "uskudar",
     title: "Kuzguncuk Oto Çekici | Tarihi Boğaz Hattı Arman Oto Kurtarma",
-    description: "Kuzguncuk oto çekici ve yol yardım servisi. İcadiye Caddesi, Paşalimanı ve Nakkaştepe rampasında 7/24 hassas oto kurtarma: 0536 213 62 49.",
+    description: "Kuzguncuk oto çekici ve yol yardım servisi. İcadiye Caddesi, Paşalimanı ve Nakkaştepe rampasında 7/24 hassas oto kurtarma: 0536 998 74 52.",
     h1: "Kuzguncuk Oto Çekici ve Yol Yardım",
     heroKicker: "İCADİYE CADDESİ, PAŞALİMANI & NAKKAŞTEPE",
     landmark: "Kuzguncuk Bostanı, İcadiye Caddesi & Paşalimanı Parkı",
@@ -667,7 +667,7 @@ export const locationPages: LocationPageData[] = [
     district: "Üsküdar",
     districtSlug: "uskudar",
     title: "Selimiye Oto Çekici | Harem & Kışla Hattı Arman Oto Kurtarma",
-    description: "Selimiye oto çekici ve kurtarma desteği. Selimiye Kışlası çevresi, Harem Otogarı ve D-100 bağlantısında 7/24 acil çekici: 0536 213 62 49.",
+    description: "Selimiye oto çekici ve kurtarma desteği. Selimiye Kışlası çevresi, Harem Otogarı ve D-100 bağlantısında 7/24 acil çekici: 0536 998 74 52.",
     h1: "Selimiye Oto Çekici ve Kurtarıcı",
     heroKicker: "SELİMİYE KIŞLASI, HAREM SAHİLİ & TIBBİYE CADDESİ",
     landmark: "Selimiye Kışlası, Haydarpaşa Numune Hastanesi & Harem Feribot İskelesi",
@@ -694,7 +694,7 @@ export const locationPages: LocationPageData[] = [
     district: "Üsküdar",
     districtSlug: "uskudar",
     title: "Kandilli Oto Çekici | Rasathane & Sahil Arman Oto Kurtarma",
-    description: "Kandilli oto çekici ve yol yardım. Kandilli Rasathanesi yolu, Vaniköy Caddesi ve sahil şeridinde 7/24 profesyonel çekici: 0536 213 62 49.",
+    description: "Kandilli oto çekici ve yol yardım. Kandilli Rasathanesi yolu, Vaniköy Caddesi ve sahil şeridinde 7/24 profesyonel çekici: 0536 998 74 52.",
     h1: "Kandilli Oto Çekici ve Oto Kurtarma",
     heroKicker: "KANDİLLİ SAHİLİ, RASATHANE & VANİKÖY CADDESİ",
     landmark: "Kandilli Rasathanesi, Adile Sultan Sarayı & Vaniköy Camii",
@@ -721,7 +721,7 @@ export const locationPages: LocationPageData[] = [
     district: "Üsküdar",
     districtSlug: "uskudar",
     title: "Bulgurlu Oto Çekici | Metro & Çamlıca Hattı Arman Oto Kurtarma",
-    description: "Bulgurlu oto çekici ve yol yardım servisi. Bulgurlu Caddesi, metro durağı ve Ümraniye sınırında 7/24 acil çekici: 0536 213 62 49.",
+    description: "Bulgurlu oto çekici ve yol yardım servisi. Bulgurlu Caddesi, metro durağı ve Ümraniye sınırında 7/24 acil çekici: 0536 998 74 52.",
     h1: "Bulgurlu Oto Çekici ve Yol Yardım",
     heroKicker: "BULGURLU CADDESİ, METRO İSTASYONU & ÇAMLICA GEÇİŞİ",
     landmark: "Bulgurlu Metro İstasyonu, Libadiye Bağlantısı & Namık Kemal Caddesi",
@@ -748,7 +748,7 @@ export const locationPages: LocationPageData[] = [
     district: "Üsküdar",
     districtSlug: "uskudar",
     title: "Çamlıca Oto Çekici | Kule & Tepeler 7/24 Arman Oto Kurtarma",
-    description: "Çamlıca oto çekici ve kurtarıcı servisi. Küçük Çamlıca, Büyük Çamlıca Tepesi ve Çamlıca Kulesi yollarında 7/24 hızlı kurtarma: 0536 213 62 49.",
+    description: "Çamlıca oto çekici ve kurtarıcı servisi. Küçük Çamlıca, Büyük Çamlıca Tepesi ve Çamlıca Kulesi yollarında 7/24 hızlı kurtarma: 0536 998 74 52.",
     h1: "Çamlıca Oto Çekici ve Oto Kurtarma",
     heroKicker: "ÇAMLICA KULESİ, BÜYÜK & KÜÇÜK ÇAMLICA TEPELERİ",
     landmark: "Çamlıca Kulesi, Çamlıca Camii & Küçük Çamlıca Korusu",
@@ -777,7 +777,7 @@ export const locationPages: LocationPageData[] = [
     district: "Bağlantı Yolu",
     districtSlug: "otoyol",
     title: "Şile Otoyolu Çekici | D-016 7/24 Acil Arman Oto Kurtarma",
-    description: "Şile Otoyolu (D-016) acil oto çekici ve yol yardım. Ümraniye, Çekmeköy, Taşdelen, Alemdağ ve Ömerli etabında konuma göre hızlı intikal: 0536 213 62 49.",
+    description: "Şile Otoyolu (D-016) acil oto çekici ve yol yardım. Ümraniye, Çekmeköy, Taşdelen, Alemdağ ve Ömerli etabında konuma göre hızlı intikal: 0536 998 74 52.",
     h1: "Şile Otoyolu (D-016) 7/24 Acil Oto Çekici",
     heroKicker: "ŞİLE OTOYOLU D-016 HIZLI MÜDAHALE · 7/24 ACİL ÇEKİCİ",
     landmark: "Taşdelen Tünelleri, Madenler Viyadüğü & Alemdağ Çıkışı",
@@ -787,7 +787,7 @@ export const locationPages: LocationPageData[] = [
     faqs: [
       {
         q: "Şile Otoyolu üzerinde arıza yaptım, emniyet şeridinde nasıl beklemeliyim?",
-        a: "Dörtlülerinizi yakın, aracın en az 150 metre gerisine reflektör koyun. Asla aracın arkasında veya içinde durmayın; yol kenarındaki çelik bariyerlerin arkasına geçip 0536 213 62 49'u arayın."
+        a: "Dörtlülerinizi yakın, aracın en az 150 metre gerisine reflektör koyun. Asla aracın arkasında veya içinde durmayın; yol kenarındaki çelik bariyerlerin arkasına geçip 0536 998 74 52 numarasını arayın."
       }
     ],
     localGuide: [
@@ -804,7 +804,7 @@ export const locationPages: LocationPageData[] = [
     district: "Bağlantı Yolu",
     districtSlug: "otoyol",
     title: "Kuzey Marmara Otoyolu Çekici | O-7 Arman Oto Kurtarma",
-    description: "Kuzey Marmara Otoyolu (O-7) Çekmeköy, Reşadiye, Hüseyinli ve Riva kavşaklarında 7/24 acil çekici ve yol yardım: 0536 213 62 49.",
+    description: "Kuzey Marmara Otoyolu (O-7) Çekmeköy, Reşadiye, Hüseyinli ve Riva kavşaklarında 7/24 acil çekici ve yol yardım: 0536 998 74 52.",
     h1: "Kuzey Marmara Otoyolu (O-7) Çekici ve Yol Yardım",
     heroKicker: "O-7 KUZEY MARMARA · ÇEKMEKÖY, REŞADİYE & HÜSEYİNLİ",
     landmark: "Reşadiye Gişeleri, Hüseyinli Dinlenme Tesisi & Çekmeköy Viyadükleri",
@@ -828,26 +828,26 @@ export const locationPages: LocationPageData[] = [
   {
     slug: "umraniye-oto-cekici",
     name: "Ümraniye Oto Çekici",
-    district: "Çevre İlçe",
-    districtSlug: "cevre-ilce",
-    title: "Ümraniye Oto Çekici | 7/24 Dudullu & Sanayi Arman Oto Kurtarma",
-    description: "Ümraniye oto çekici ve oto kurtarma servisi. Dudullu OSB, Ümraniye Sanayi Sitesi, Tepeüstü ve Çakmak'ta 7/24 hızlı çekici: 0536 213 62 49.",
+    district: "Ümraniye",
+    districtSlug: "umraniye",
+    title: "Ümraniye Oto Çekici | Dudullu, Çakmak ve 7/24 Yol Yardım",
+    description: "Ümraniye oto çekici ve 7/24 yol yardım. Dudullu OSB, Yukarı Dudullu, Çakmak, Madenler ve Tepeüstü çevresinde arızalı veya kazalı araç taşıma.",
     h1: "Ümraniye Oto Çekici ve Sanayi Transferi",
-    heroKicker: "DUDULLU OSB, ÜMRANİYE SANAYİ & TEPEÜSTÜ KAVŞAĞI",
-    landmark: "Ümraniye Oto Sanayi Sitesi, Dudullu Meydanı & Tepeüstü IKEA Çevresi",
+    heroKicker: "DUDULLU OSB · ÇAKMAK · MADENLER · TEPEÜSTÜ",
+    landmark: "Dudullu OSB, Ümraniye Sanayi Sitesi, Çakmak Metro & Tepeüstü",
     responseTime: "15 - 20 Dakika",
-    roads: ["Alemdağ Caddesi", "TEM Otoyolu Ümraniye Çıkışı", "Dudullu-Bostancı Yolu"],
-    serviceTypes: ["Sanayi Sitesi Nakli", "7/24 Çekici", "Akü Takviye"],
+    roads: ["Alemdağ Caddesi", "Şile Otoyolu (D-016)", "Dudullu-Bostancı Yolu", "TEM Ümraniye bağlantısı"],
+    serviceTypes: ["Dudullu OSB ve sanayiye çekici", "7/24 oto kurtarıcı", "Akü takviye", "Kazalı araç taşıma"],
     faqs: [
       {
-        q: "Aracımı doğrudan Ümraniye Oto Sanayi Sitesi'ndeki ustama götürebilir misiniz?",
-        a: "Kesinlikle. Belirttiğiniz dükkan veya ustanın kapısına kadar aracı indirip anahtarı teslim ediyoruz."
+        q: "Dudullu OSB veya Ümraniye Sanayi Sitesi'ne araç götürüyor musunuz?",
+        a: "Evet. Aracın bulunduğu mahalleyi, gideceği servis adresini ve tekerleklerinin dönüp dönmediğini telefonda paylaşın; uygun taşıma şeklini ve ücreti yola çıkmadan netleştirelim."
       }
     ],
     localGuide: [
       {
-        heading: "Ümraniye Sanayi ve Ticaret Merkezlerine Doğrudan Taşıma",
-        text: "Çekmeköy'ün hemen sınırındaki Ümraniye'de sanayi sitelerine yönelik araç nakliyatında hızlı, kontrollü ve uygun fiyatlı çözümler üretiyoruz."
+        heading: "Dudullu ve Ümraniye Mahallelerinde Oto Çekici",
+        text: "Dudullu OSB, Yukarı Dudullu, Aşağı Dudullu, Parseller, Çakmak, Madenler, İnkılap, Yamanevler, Atakent, Armağanevler, Ihlamurkuyu ve Tepeüstü çevresinde aracınız yolda kaldıysa mahalle, cadde ve yön bilgisini iletin. Akü arızasında yerinde takviye; yürümeyen veya kazalı araçta uygun çekiciyle güvenli taşıma için önce araç durumunu ve teslim adresini netleştiriyoruz."
       }
     ],
     nearbySlugs: ["cekmekoy-oto-cekici", "madenler-oto-cekici", "altunizade-oto-cekici"]
@@ -855,26 +855,26 @@ export const locationPages: LocationPageData[] = [
   {
     slug: "sancaktepe-oto-cekici",
     name: "Sancaktepe Oto Çekici",
-    district: "Çevre İlçe",
-    districtSlug: "cevre-ilce",
-    title: "Sancaktepe Oto Çekici | Samandıra & Sarıgazi Arman Oto Kurtarma",
-    description: "Sancaktepe oto çekici ve yol yardım. Sarıgazi, Samandıra ve Yenidoğan'da 7/24 uygun fiyatlı çekici ve oto kurtarma: 0536 213 62 49.",
+    district: "Sancaktepe",
+    districtSlug: "sancaktepe",
+    title: "Sancaktepe Oto Çekici | Sarıgazi, Samandıra, Yenidoğan",
+    description: "Sancaktepe oto çekici ve 7/24 yol yardım. Sarıgazi, Samandıra, Yenidoğan, Abdurrahmangazi ve Sancaktepe Şehir Hastanesi çevresinde arızalı veya kazalı araç taşıma.",
     h1: "Sancaktepe Oto Çekici ve Yol Yardım",
     heroKicker: "SARIGAZİ, SAMANDIRA, YENİDOĞAN & TEM BAĞLANTISI",
     landmark: "Sarıgazi Meydanı, Sancaktepe Şehir Hastanesi & Samandıra Gişeleri",
     responseTime: "15 - 20 Dakika",
-    roads: ["Ankara Caddesi", "TEM Otoyolu Samandıra Gişeleri", "Baraj Yolu"],
-    serviceTypes: ["7/24 Çekici", "Kayar Kasa Nakil", "Akü Takviye"],
+    roads: ["Ankara Caddesi", "TEM Otoyolu Samandıra bağlantısı", "Baraj Yolu", "Osmangazi Caddesi"],
+    serviceTypes: ["Samandıra oto çekici", "Sarıgazi oto kurtarıcı", "Akü takviye", "Kazalı araç taşıma"],
     faqs: [
       {
         q: "Sancaktepe Şehir Hastanesi civarında çekici hizmeti var mı?",
-        a: "Evet. Şehir Hastanesi, Sarıgazi ve Samandıra çevresine 15 dakika içinde ulaşıyoruz."
+        a: "Evet. Tam konumunuzu, yol üzerindeyseniz gidiş yönü ve en yakın kavşak/çıkış bilgisini paylaşın. Varış süresi trafik ve mevcut araç konumuna göre telefonda bildirilir."
       }
     ],
     localGuide: [
       {
-        heading: "Sancaktepe'de 7/24 Kesintisiz Oto Kurtarma",
-        text: "Çekmeköy ile komşu olan Sancaktepe genelinde arızalı ve kazalı araçların güvenle nakli için 7/24 hizmet veriyoruz."
+        heading: "Sarıgazi ve Samandıra'da Yol Yardım",
+        text: "Sarıgazi, Samandıra, Yenidoğan, Abdurrahmangazi, Veysel Karani, Meclis, Eyüp Sultan, Emek, Osmangazi, Paşaköy ve Sancaktepe Şehir Hastanesi çevresinde arızalı araç için destek veriyoruz. TEM bağlantısı veya Ankara Caddesi gibi ana yollarda aradıysanız istikamet, en yakın çıkış ve güvenli bekleme noktasını söyleyin."
       }
     ],
     nearbySlugs: ["cekmekoy-oto-cekici", "tasdelen-oto-cekici", "sultanbeyli-oto-cekici"]
@@ -882,26 +882,26 @@ export const locationPages: LocationPageData[] = [
   {
     slug: "sultanbeyli-oto-cekici",
     name: "Sultanbeyli Oto Çekici",
-    district: "Çevre İlçe",
-    districtSlug: "cevre-ilce",
-    title: "Sultanbeyli Oto Çekici | TEM & Merkez 7/24 Arman Oto Kurtarma",
-    description: "Sultanbeyli oto çekici servisi. Fatih Bulvarı, TEM Sultanbeyli gişeleri ve sanayi bölgesinde 7/24 güvenli çekici: 0536 213 62 49.",
+    district: "Sultanbeyli",
+    districtSlug: "sultanbeyli",
+    title: "Sultanbeyli Oto Çekici | Battalgazi, Adil, TEM ve Merkez",
+    description: "Sultanbeyli oto çekici ve yol yardım. Battalgazi, Adil, Ahmet Yesevi, Fatih Bulvarı ve TEM Sultanbeyli bağlantısında arızalı ve kazalı araç taşıma.",
     h1: "Sultanbeyli Oto Çekici ve Oto Kurtarma",
     heroKicker: "FATİH BULVARI, TEM GİŞELERİ & SANAYİ BÖLGESİ",
     landmark: "Sultanbeyli Gölet Parkı, Plato AVM & TEM Çıkışı",
     responseTime: "15 - 25 Dakika",
-    roads: ["Fatih Bulvarı", "TEM Otoyolu Sultanbeyli Etabı", "Petrol Yolu Caddesi"],
-    serviceTypes: ["7/24 Çekici", "Kayar Kasa Taşıma", "Akü Desteği"],
+    roads: ["Fatih Bulvarı", "TEM Otoyolu Sultanbeyli bağlantısı", "Petrol Yolu Caddesi", "Abdurrahmangazi Caddesi"],
+    serviceTypes: ["TEM bağlantısında acil çekici", "Mahalle içi oto kurtarıcı", "Akü takviye", "Kazalı araç taşıma"],
     faqs: [
       {
         q: "Sultanbeyli'den Çekmeköy veya Kartal'a araç çekilir mi?",
-        a: "Evet. Aracınızı dilediğiniz yetkili servise veya sanayi bölgesine taşıyoruz."
+        a: "Evet. Battalgazi, Adil, Ahmet Yesevi, Akşemsettin, Hasanpaşa, Mecidiye, Fatih, Turgut Reis ve diğer mahallelerden Çekmeköy, Sancaktepe veya belirttiğiniz servise taşıma için adres ve araç bilgisiyle arayın."
       }
     ],
     localGuide: [
       {
-        heading: "Sultanbeyli'de Hızlı Çekici Çözümleri",
-        text: "Sultanbeyli'nin ana arterlerinde ve mahallelerinde yolda kalan tüm sürücülere profesyonel araç nakli sağlıyoruz."
+        heading: "Sultanbeyli Mahallelerinde ve TEM Bağlantısında",
+        text: "Battalgazi, Adil, Ahmet Yesevi, Akşemsettin, Fatih, Hasanpaşa, Mecidiye, Mehmet Akif, Mimar Sinan, Necip Fazıl, Orhangazi, Turgut Reis ve Yavuz Selim mahallelerinde; ayrıca TEM bağlantısı ve Fatih Bulvarı üzerinde yolda kaldığınızda arayın. Otoyolda yönünüzü ve en yakın çıkışı, mahalle içindeyseniz cadde veya bilinen noktayı belirtmeniz ekibin sizi bulmasını kolaylaştırır."
       }
     ],
     nearbySlugs: ["sancaktepe-oto-cekici", "cekmekoy-oto-cekici"]
@@ -912,7 +912,7 @@ export const locationPages: LocationPageData[] = [
     district: "Çevre İlçe",
     districtSlug: "cevre-ilce",
     title: "Beykoz Oto Çekici | Kavacık, Riva & Sahil Arman Oto Kurtarma",
-    description: "Beykoz oto çekici ve yol yardım. Kavacık köprü çıkışı, Riva yolu, Çavuşbaşı ve Beykoz sahilinde 7/24 oto kurtarıcı: 0536 213 62 49.",
+    description: "Beykoz oto çekici ve yol yardım. Kavacık köprü çıkışı, Riva yolu, Çavuşbaşı ve Beykoz sahilinde 7/24 oto kurtarıcı: 0536 998 74 52.",
     h1: "Beykoz Oto Çekici ve Yol Yardım",
     heroKicker: "KAVACIK KÖPRÜ ÇIKIŞI, RİVA YOLU & ÇAVUŞBAŞI",
     landmark: "Kavacık Kavşağı, Beykoz Korusu & Riva Plaj Yolu",
@@ -939,7 +939,7 @@ export const locationPages: LocationPageData[] = [
     district: "Çevre İlçe",
     districtSlug: "cevre-ilce",
     title: "Şile Oto Çekici | Merkez & Ağva 7/24 Arman Oto Kurtarma",
-    description: "Şile oto çekici ve oto kurtarma servisi. Şile merkez, Ağva, Kumbaba, Sofular ve sahil köylerinde 7/24 acil çekici: 0536 213 62 49.",
+    description: "Şile oto çekici ve oto kurtarma servisi. Şile merkez, Ağva, Kumbaba, Sofular ve sahil köylerinde 7/24 acil çekici: 0536 998 74 52.",
     h1: "Şile Oto Çekici ve Oto Kurtarma",
     heroKicker: "ŞİLE MERKEZ, AĞVA, KUMBABA & SAHİL KÖYLERİ",
     landmark: "Şile Feneri, Kumbaba Plajı & Şile Sanayi Sitesi",
@@ -968,17 +968,17 @@ export const locationPages: LocationPageData[] = [
     district: "Özel Arama",
     districtSlug: "arama-niyeti",
     title: "En Yakın Oto Çekici | Konumunuza konuma göre Arman Oto Kurtarma",
-    description: "Bulunduğunuz konuma en yakın oto çekici. Çekmeköy ve Üsküdar genelinde uygun araç planlamasıyla konuma göre yanınızdayız: 0536 213 62 49.",
+    description: "Bulunduğunuz konuma en yakın oto çekici. Çekmeköy, Sancaktepe, Ümraniye ve Sultanbeyli'de konumunuza göre yol yardım: 0536 998 74 52.",
     h1: "En Yakın Oto Çekici - Canlı Konumla Anında Ulaşım",
     heroKicker: "KONUMUNUZA EN YAKIN AKTİF KAYAR KASA ÇEKİCİ",
-    landmark: "Çekmeköy & Üsküdar Bölge Devriye Noktaları",
+    landmark: "Çekmeköy, Sancaktepe, Ümraniye ve Sultanbeyli",
     responseTime: "10 - 15 Dakika",
     roads: ["Şile Otoyolu", "D-100 Karayolu", "Kuzey Marmara Otoyolu"],
     serviceTypes: ["En Yakın Çekici", "7/24 Acil Yol Yardım", "Hızlı Konum Desteği"],
     faqs: [
       {
         q: "En yakın çekiciyi nasıl çağırabilirim?",
-        a: "0536 213 62 49 numaramızı arayabilir veya WhatsApp butonuna basarak canlı konumunuzu iletebilirsiniz. Harita üzerindeki en yakın nöbetçi aracımız derhal yönlendirilir."
+        a: "0536 998 74 52 numaramızı arayabilir veya WhatsApp butonuna basarak canlı konumunuzu iletebilirsiniz. Harita üzerindeki en yakın nöbetçi aracımız derhal yönlendirilir."
       }
     ],
     localGuide: [
@@ -995,7 +995,7 @@ export const locationPages: LocationPageData[] = [
     district: "Özel Arama",
     districtSlug: "arama-niyeti",
     title: "Acil Çekici | uygun ekip yönlendirmesi 7/24 Arman Oto Kurtarma",
-    description: "Acil oto çekici servisi. Otoyolda, köprüde veya yoğun trafikte kalan araçlar için acil öncelikli kurtarma: 0536 213 62 49.",
+    description: "Acil oto çekici servisi. Otoyolda, köprüde veya yoğun trafikte kalan araçlar için acil öncelikli kurtarma: 0536 998 74 52.",
     h1: "Acil Oto Çekici ve Kaza Tahliye Servisi",
     heroKicker: "ÖNCELİKLİ ÇAĞRI · ANINDA YOLA ÇIKAN EKİP",
     landmark: "Tüm Anadolu Yakası Otoyol ve Köprü Katılımları",
@@ -1022,7 +1022,7 @@ export const locationPages: LocationPageData[] = [
     district: "Özel Arama",
     districtSlug: "arama-niyeti",
     title: "7/24 Çekici | Gece Gündüz Kesintisiz Arman Oto Kurtarma",
-    description: "7 gün 24 saat kesintisiz oto çekici hizmeti. Gece yarısı, resmi tatil ve bayramlarda açık nöbetçi oto kurtarma: 0536 213 62 49.",
+    description: "7 gün 24 saat kesintisiz oto çekici hizmeti. Gece yarısı, resmi tatil ve bayramlarda açık nöbetçi oto kurtarma: 0536 998 74 52.",
     h1: "7/24 Kesintisiz Oto Çekici ve Yol Yardım",
     heroKicker: "GECE YARISI, HAFTA SONU & RESMİ TATİLLERDE NÖBETÇİ",
     landmark: "Çekmeköy & Üsküdar 24 Saat Nöbetçi İstasyonları",
@@ -1049,7 +1049,7 @@ export const locationPages: LocationPageData[] = [
     district: "Özel Arama",
     districtSlug: "arama-niyeti",
     title: "Gece Açık Çekici | İstanbul Anadolu Yakası Arman Oto Kurtarma",
-    description: "Gece açık oto çekici ve yol yardım. Gece nöbetçi kayar kasa araçlarımızla Çekmeköy ve Üsküdar'da 7/24 hizmetinizdeyiz: 0536 213 62 49.",
+    description: "Gece açık oto çekici ve yol yardım. Çekmeköy, Sancaktepe, Ümraniye ve Sultanbeyli'de 7/24 hizmet için arayın: 0536 998 74 52.",
     h1: "Gece Açık Oto Çekici ve Acil Kurtarıcı",
     heroKicker: "GECE NÖBETÇİ OTO KURTARMA EKİBİ",
     landmark: "Gece Boyu Nöbetteki Çekici Noktalarımız",
@@ -1076,7 +1076,7 @@ export const locationPages: LocationPageData[] = [
     district: "Özel Arama",
     districtSlug: "arama-niyeti",
     title: "Otoyolda Kaldım Çekici | Otoban Acil Kurtarma Arman",
-    description: "Otoyolda veya otobanda arızalanan araçlar için acil emniyet şeridi kurtarma servisi. Hızlı varış, güvenli tahliye: 0536 213 62 49.",
+    description: "Otoyolda veya otobanda arızalanan araçlar için acil emniyet şeridi kurtarma servisi. Hızlı varış, güvenli tahliye: 0536 998 74 52.",
     h1: "Otoyolda Kaldım Ne Yapmalıyım? Acil Çekici",
     heroKicker: "OTOBAN EMNİYET ŞERİDİ & VİYADÜK ACİL TAHLİYE",
     landmark: "TEM, D-100, Kuzey Marmara & Şile Otoyolu",
@@ -1098,6 +1098,12 @@ export const locationPages: LocationPageData[] = [
     nearbySlugs: ["sile-otoyolu-cekici", "kuzey-marmara-otoyolu-cekici", "acil-cekici"]
   }
 ];
+
+const allowedDistricts = new Set(["Çekmeköy", "Ümraniye", "Sancaktepe", "Sultanbeyli", "Özel Arama"]);
+const allowedSearchSlugs = new Set(["sile-otoyolu-cekici", "kuzey-marmara-otoyolu-cekici"]);
+export const locationPages = allLocationPages.filter((loc) =>
+  allowedDistricts.has(loc.district) || allowedSearchSlugs.has(loc.slug)
+);
 
 export const findLocationBySlug = (slug: string) =>
   locationPages.find((loc) => loc.slug === slug);

@@ -45,12 +45,9 @@ export function generateLocalBusinessSchema(pageUrl?: string) {
     },
     areaServed: [
       { "@type": "AdministrativeArea", name: "Çekmeköy" },
-      { "@type": "AdministrativeArea", name: "Üsküdar" },
       { "@type": "AdministrativeArea", name: "Ümraniye" },
       { "@type": "AdministrativeArea", name: "Sancaktepe" },
-      { "@type": "AdministrativeArea", name: "Beykoz" },
-      { "@type": "AdministrativeArea", name: "Şile" },
-      { "@type": "AdministrativeArea", name: "İstanbul Anadolu Yakası" },
+      { "@type": "AdministrativeArea", name: "Sultanbeyli" },
     ],
     contactPoint: {
       "@type": "ContactPoint",

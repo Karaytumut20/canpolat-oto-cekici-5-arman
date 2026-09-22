@@ -2,11 +2,11 @@ export const siteConfig = {
   name: "Arman Oto Kurtarma",
   officialName: "Çekmeköy Oto Çekici Arman Oto Kurtarıcı",
   shortName: "Arman Oto Kurtarma",
-  slogan: "Çekmeköy ve Üsküdar'da 7/24 yol yardım",
-  phone: "+905362136249",
-  phoneDisplay: "0536 213 62 49",
+  slogan: "Çekmeköy merkezli · Sancaktepe, Ümraniye ve Sultanbeyli'de 7/24 yol yardım",
+  phone: "+905369987452",
+  phoneDisplay: "0536 998 74 52",
   whatsapp:
-    "https://wa.me/905362136249?text=Merhaba%2C%20%C3%A7ekici%20veya%20yol%20yard%C4%B1m%20deste%C4%9Fine%20ihtiyac%C4%B1m%20var.%20Konumumu%20payla%C5%9F%C4%B1yorum.",
+    "https://wa.me/905418238815?text=Merhaba%2C%20%C3%A7ekici%20veya%20yol%20yard%C4%B1m%20deste%C4%9Fine%20ihtiyac%C4%B1m%20var.%20Konumumu%20payla%C5%9F%C4%B1yorum.",
   mapsUrl:
     "https://www.google.com/maps?q=%C3%87ekmek%C3%B6y+Oto+%C3%87ekici+Arman+Oto+Kurtar%C4%B1c%C4%B1,+So%C4%9Fukp%C4%B1nar,+G%C3%BCvercin+Sk.+NO:4/A,+34788+%C3%87ekmek%C3%B6y/%C4%B0stanbul&ftid=0x14cad188d135829d:0xb0d421754f1414bb&entry=gps",
   mapsEmbed:

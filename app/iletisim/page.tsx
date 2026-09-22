@@ -22,7 +22,7 @@ import {
 export const metadata: Metadata = {
   title: "İletişim & Konum | Arman Oto Kurtarma - Çekmeköy Soğukpınar",
   description:
-    "Arman Oto Kurtarma iletişim bilgileri. Adres: Soğukpınar, Güvercin Sk. NO:4/A Çekmeköy / İstanbul. 7/24 Telefon: 0536 213 62 49. WhatsApp canlı konum desteği.",
+    "Arman Oto Kurtarma iletişim bilgileri. Adres: Soğukpınar, Güvercin Sk. NO:4/A Çekmeköy / İstanbul. Telefon: 0536 998 74 52, WhatsApp: +90 541 823 88 15.",
   alternates: { canonical: `${siteConfig.domain}/iletisim` },
   openGraph: {
     title: "İletişim & Konum | Arman Oto Kurtarma",

@@ -6,7 +6,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.domain),
   title: "Çekmeköy Oto Çekici | Arman Oto Kurtarma",
-  description: "Çekmeköy ve Üsküdar'da 7/24 oto çekici, oto kurtarma ve yol yardım. Soğukpınar merkezli Arman Oto Kurtarma: 0536 213 62 49.",
+  description: "Çekmeköy merkezli; Sancaktepe, Ümraniye ve Sultanbeyli'de 7/24 oto çekici, kurtarma ve yol yardım. Telefon: 0536 998 74 52.",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   alternates: { canonical: "/" },
   robots: {
@@ -20,12 +20,12 @@ export const metadata: Metadata = {
     url: siteConfig.domain,
     siteName: siteConfig.name,
     title: "Çekmeköy Oto Çekici | Arman Oto Kurtarma",
-    description: "Çekmeköy, Üsküdar ve çevre mahallelerde 7/24 oto çekici, oto kurtarma ve yol yardım.",
+    description: "Çekmeköy, Sancaktepe, Ümraniye ve Sultanbeyli'de 7/24 oto çekici, oto kurtarma ve yol yardım.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Çekmeköy Oto Çekici | Arman Oto Kurtarma",
-    description: "Çekmeköy ve Üsküdar'da 7/24 oto çekici, oto kurtarma ve yol yardım.",
+    description: "Çekmeköy merkezli; Sancaktepe, Ümraniye ve Sultanbeyli'de 7/24 oto çekici, kurtarma ve yol yardım.",
   },
 };
 

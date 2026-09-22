@@ -186,21 +186,21 @@ export default async function LocationPage({
           ))}
 
           {/* Regional Roads and Specific Context */}
-          <div className="p-6 rounded-lg bg-slate-900/70 border border-slate-800 my-8">
-            <h4 className="text-sm font-bold text-amber-500 uppercase tracking-wider flex items-center gap-2 mb-3">
+          <div className="location-road-card my-8">
+            <h4 className="flex items-center gap-2 mb-3">
               <Compass size={18} /> {loc.name} Bağlantı Yolları ve Arterler
             </h4>
             <div className="flex flex-wrap gap-2 mb-4">
               {loc.roads.map((road) => (
                 <span
                   key={road}
-                  className="px-3 py-1 rounded bg-slate-800 text-slate-300 text-xs font-semibold"
+                  className="location-road-chip"
                 >
                   {road}
                 </span>
               ))}
             </div>
-            <p className="text-slate-400 text-xs leading-relaxed m-0">
+            <p className="location-road-note m-0">
               Bu güzergahlarda meydana gelen akü bitmesi, lastik yarılması, kaza veya motor arızalarında
                   ekibimiz konum ve trafik durumunu kontrol ederek uygun ulaşım planını oluşturur.
             </p>
@@ -212,25 +212,25 @@ export default async function LocationPage({
               {loc.name} Çevresinde Yolda Kalınca Ne Yapmalısınız?
             </h3>
             <div className="space-y-3">
-              <div className="flex items-start gap-3 p-4 rounded-md bg-slate-900/50 border border-slate-800">
-                <AlertTriangle className="text-amber-500 shrink-0 mt-0.5" size={20} />
-                <div className="text-sm text-slate-300">
-                  <strong className="text-white block mb-1">1. Can Güvenliğini Sağlayın</strong>
+              <div className="location-emergency-card">
+                <AlertTriangle className="location-emergency-icon" size={20} />
+                <div>
+                  <strong>1. Can Güvenliğini Sağlayın</strong>
                   Aracı mümkünse emniyet şeridine çekin, dörtlüleri yakın ve araçta beklemeyin. Yol kenarındaki
                   bariyerlerin arkasına geçin.
                 </div>
               </div>
-              <div className="flex items-start gap-3 p-4 rounded-md bg-slate-900/50 border border-slate-800">
-                <Compass className="text-amber-500 shrink-0 mt-0.5" size={20} />
-                <div className="text-sm text-slate-300">
-                  <strong className="text-white block mb-1">2. Canlı Konumunuzu Paylaşın</strong>
+              <div className="location-emergency-card">
+                <Compass className="location-emergency-icon" size={20} />
+                <div>
+                  <strong>2. Canlı Konumunuzu Paylaşın</strong>
                   WhatsApp üzerinden tek tıkla konum paylaşarak ekibimizin tam yerinizi navigasyonda görmesini sağlayın.
                 </div>
               </div>
-              <div className="flex items-start gap-3 p-4 rounded-md bg-slate-900/50 border border-slate-800">
-                <Truck className="text-amber-500 shrink-0 mt-0.5" size={20} />
-                <div className="text-sm text-slate-300">
-                  <strong className="text-white block mb-1">3. Güvenli Yükleme ve Nakil</strong>
+              <div className="location-emergency-card">
+                <Truck className="location-emergency-icon" size={20} />
+                <div>
+                  <strong>3. Güvenli Yükleme ve Nakil</strong>
                   Aracınız hidrolik kayar kasa çekicimize çelik tambur ve takozlarla hasarsız sabitlenerek istediğiniz
                   servise taşınır.
                 </div>
@@ -246,9 +246,10 @@ export default async function LocationPage({
             <div className="faq-list">
               {loc.faqs.map((faq, i) => (
                 <details key={faq.q} className="border-b border-slate-800">
-                  <summary className="cursor-pointer py-4 flex items-center justify-between text-base font-bold text-white">
-                    <span>0{i + 1}. {faq.q}</span>
-                    <span className="text-amber-500 text-xl font-mono">+</span>
+                  <summary className="cursor-pointer py-4 text-base font-bold">
+                    <span className="faq-number">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="faq-question">{faq.q}</span>
+                    <b className="faq-toggle">+</b>
                   </summary>
                   <p className="text-slate-400 text-sm pb-4 pl-6 leading-relaxed m-0">
                     {faq.a}

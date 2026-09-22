@@ -22,14 +22,14 @@ import {
 } from "@/lib/seo-schema";
 
 export const metadata: Metadata = {
-  title: "Hakkımızda | Arman Oto Kurtarma - Çekmeköy & Üsküdar",
+  title: "Hakkımızda | Arman Oto Kurtarma - Çekmeköy ve Çevre İlçeler",
   description:
     "Arman Oto Kurtarma kurumsal profili. Çekmeköy Soğukpınar merkezli kayar kasa araç taşıma ve 7/24 yol yardım hizmetleri.",
   alternates: { canonical: `${siteConfig.domain}/hakkimizda` },
   openGraph: {
     title: "Hakkımızda | Arman Oto Kurtarma",
     description:
-      "İstanbul Çekmeköy ve Üsküdar'da 7/24 oto çekici, oto kurtarma ve yol yardım hizmeti.",
+      "Çekmeköy merkezli olarak Sancaktepe, Ümraniye ve Sultanbeyli'de 7/24 oto çekici ve yol yardım.",
     url: `${siteConfig.domain}/hakkimizda`,
     siteName: siteConfig.name,
     images: [{ url: `${siteConfig.domain}/arman-hero.jpg` }],
@@ -86,7 +86,7 @@ export default function AboutPage() {
           </div>
           <h1>Arman Oto Kurtarma - İstanbul&apos;un Güvenilir Yol Arkadaşı</h1>
           <p>
-            Çekmeköy Soğukpınar merkezli istasyonumuz ve Üsküdar sahra ekiplerimizle, yolda kalan her
+            Çekmeköy Soğukpınar merkezimizden Sancaktepe, Ümraniye ve Sultanbeyli'ye, yolda kalan her
             sürücüye açık bilgi veren ve aracın durumuna uygun ekipman kullanan bir çekici hizmeti sunuyoruz.
           </p>
           <div className="area-hero-actions">
@@ -227,7 +227,7 @@ export default function AboutPage() {
             7/24 BİZE ULAŞIN
           </small>
           <h2>Yol Yardım Desteği İçin Hazırız.</h2>
-          <p>Çekmeköy, Üsküdar veya çevre ilçelerde dilediğiniz an bizi arayabilirsiniz.</p>
+          <p>Çekmeköy, Sancaktepe, Ümraniye veya Sultanbeyli'de dilediğiniz an bizi arayabilirsiniz.</p>
         </div>
         <a href={`tel:${siteConfig.phone}`}>
           <Phone size={18} /> {siteConfig.phoneDisplay}

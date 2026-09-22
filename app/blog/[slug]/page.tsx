@@ -242,7 +242,7 @@ export default async function BlogPostDetailPage({
               Yolda mısınız?
             </h3>
             <p className="text-xs text-slate-400 mb-3">
-              Çekmeköy ve Üsküdar için konumunuza göre ekip yönlendiriyoruz.
+              Çekmeköy, Sancaktepe, Ümraniye ve Sultanbeyli için konumunuza göre ekip yönlendiriyoruz.
             </p>
             <a
               href={`tel:${siteConfig.phone}`}
