@@ -20,7 +20,7 @@ export const servicesData: ServicePageData[] = [
     name: "Oto Çekici",
     shortTitle: "Oto Çekici",
     title: "Oto Çekici Hizmeti | 7/24 Profesyonel Taşıma Arman Oto Kurtarma",
-    description: "Çekmeköy, Sancaktepe, Ümraniye ve Sultanbeyli'de 7/24 profesyonel oto çekici. Hidrolik kayar kasa, özenli ve hasarsız araç nakliyatı: 0536 998 74 52.",
+    description: "Çekmeköy, Sancaktepe, Ümraniye ve Sultanbeyli'de 7/24 profesyonel oto çekici. Hidrolik kayar kasa, özenli ve hasarsız araç nakliyatı: 05369987452.",
     h1: "7/24 Profesyonel Oto Çekici Hizmeti",
     heroKicker: "HİDROLİK KAYAR KASA · özenli TAŞIMA · işlem öncesi fiyat bilgisi",
     summary: "Binek, SUV, ticari veya elektrikli aracınız nerede kalırsa kalsın; modern kayar kasa çekicilerimizle aracınızı hasarsız olarak dilediğiniz yetkili servise veya tamirhaneye ulaştırıyoruz.",
@@ -35,7 +35,7 @@ export const servicesData: ServicePageData[] = [
       {
         step: "01",
         title: "Bizi Arayın & Konum Paylaşın",
-        desc: "0536 998 74 52 üzerinden arayarak veya WhatsApp'tan tek dokunuşla canlı konum gönderin."
+        desc: "05369987452 üzerinden arayarak veya WhatsApp'tan tek dokunuşla canlı konum gönderin."
       },
       {
         step: "02",
@@ -79,7 +79,7 @@ export const servicesData: ServicePageData[] = [
     name: "Oto Kurtarma",
     shortTitle: "Oto Kurtarma",
     title: "Oto Kurtarma Hizmeti | Vinçli & Ağır Şart Kurtarma Arman",
-    description: "İstanbul oto kurtarma servisi. Yoldan çıkan, şarampole kayan, devrilen, tekerleği kilitli veya kazalı araçlara vinçli ve hasarsız kurtarma: 0536 998 74 52.",
+    description: "İstanbul oto kurtarma servisi. Yoldan çıkan, şarampole kayan, devrilen, tekerleği kilitli veya kazalı araçlara vinçli ve hasarsız kurtarma: 05369987452.",
     h1: "Oto Kurtarma ve Zorlu Zemin Kurtarma Hizmeti",
     heroKicker: "VİNÇLİ KURTARMA · ŞARAMPOLE MÜDAHALE · AHTAPOT SİSTEM",
     summary: "Basit çekici operasyonlarının yetersiz kaldığı kaza, şarampole devrilme, batma veya tekerlek kilitlenmesi durumlarında güçlü hidrolik vinçli donanımımızla hasarsız kurtarma sağlıyoruz.",
@@ -130,7 +130,7 @@ export const servicesData: ServicePageData[] = [
     name: "7/24 Yol Yardım",
     shortTitle: "7/24 Yol Yardım",
     title: "7/24 Yol Yardım Hizmeti | Akü, Lastik & Çekici Arman",
-    description: "İstanbul Anadolu Yakası 7/24 acil yol yardım servisi. Yerinde akü takviyesi, lastik yardımı, yakıt ulaştırma ve acil oto çekici: 0536 998 74 52.",
+    description: "İstanbul Anadolu Yakası 7/24 acil yol yardım servisi. Yerinde akü takviyesi, lastik yardımı, yakıt ulaştırma ve acil oto çekici: 05369987452.",
     h1: "7/24 Kesintisiz Acil Yol Yardım Hizmeti",
     heroKicker: "YERİNDE HIZLI DESTEK · AKÜ TAKVİYESİ · MOBİL SERVİS",
     summary: "Yolda kaldığınızda sorunu önce bulunduğunuz yerde çözmeye çalışıyor, çözülemeyecek arızalarda ise aracınızı en uygun servise güvenle taşıyoruz.",
@@ -177,7 +177,7 @@ export const servicesData: ServicePageData[] = [
     name: "Acil Çekici",
     shortTitle: "Acil Çekici",
     title: "Acil Çekici | Trafikte ve Otoyolda Öncelikli Arman Oto Kurtarma",
-    description: "Acil oto çekici servisi. Otoyolda, köprü katılımında veya yoğun trafikte kalan araçlar için uygun ekip yönlendirmesiyle acil öncelikli tahliye: 0536 998 74 52.",
+    description: "Acil oto çekici servisi. Otoyolda, köprü katılımında veya yoğun trafikte kalan araçlar için uygun ekip yönlendirmesiyle acil öncelikli tahliye: 05369987452.",
     h1: "Acil Oto Çekici - Öncelikli Kurtarma Çağrısı",
     heroKicker: "ANINDA ÇIKIŞ · OTOYOL VE KÖPRÜLERDE CAN GÜVENLİĞİ",
     summary: "Trafiğin aktığı tehlikeli noktalarda veya otoyol emniyet şeridinde kalan araçlar için alarm seviyesinde öncelikli acil çekici yönlendirmesi yapıyoruz.",
@@ -191,7 +191,7 @@ export const servicesData: ServicePageData[] = [
       {
         step: "01",
         title: "Acil Çağrı & Konum",
-        desc: "0536 998 74 52 numarasını arayıp acil konumunuzu belirtin; konumunuz öncelikle işleme alınır."
+        desc: "05369987452 numarasını arayıp acil konumunuzu belirtin; konumunuz öncelikle işleme alınır."
       },
       {
         step: "02",
@@ -223,7 +223,7 @@ export const servicesData: ServicePageData[] = [
     name: "Kazalı Araç Çekme",
     shortTitle: "Kazalı Araç Çekme",
     title: "Kazalı Araç Çekme | Kaza Sonrası kontrollü Taşıma Arman",
-    description: "Kaza yapmış yürümeyen araçların kaporta ve mekanik servislere güvenli taşınması. Kaza tutanağı ve kasko anlaşmalı faturalı çekici: 0536 998 74 52.",
+    description: "Kaza yapmış yürümeyen araçların kaporta ve mekanik servislere güvenli taşınması. Kaza tutanağı ve kasko anlaşmalı faturalı çekici: 05369987452.",
     h1: "Kazalı Araç Çekme ve Hasarsız Yükleme",
     heroKicker: "KAZA SONRASI SERVİSE VE OTOPARKA GÜVENLİ NAKİL",
     summary: "Trafik kazası sonrası tekerleği kopan, aksı kırılan veya kaportası sıkışan araçları hasarın boyutunu artırmadan profesyonel ekipmanla naklediyoruz.",
@@ -269,7 +269,7 @@ export const servicesData: ServicePageData[] = [
     name: "Arızalı Araç Çekme",
     shortTitle: "Arızalı Araç Çekme",
     title: "Arızalı Araç Çekme | Motor, Şanzıman & Elektrik Arızaları Arman",
-    description: "Arızalı araç çekme servisi. Motor harareti, triger kopması, şanzıman arızası veya elektronik kilitlenmelerde hasarsız çekici: 0536 998 74 52.",
+    description: "Arızalı araç çekme servisi. Motor harareti, triger kopması, şanzıman arızası veya elektronik kilitlenmelerde hasarsız çekici: 05369987452.",
     h1: "Arızalı Araç Çekme ve Servis Nakil Servisi",
     heroKicker: "MEKANİK VE ELEKTRONİK ARIZALARDA HASARSIZ TRANSFER",
     summary: "Motoru çalışmayan, şanzımanı kilitlenen veya hararet yapan araçlarınızı zorlamadan kayar kasamıza alıp ustanızın kapısına bırakıyoruz.",
@@ -315,7 +315,7 @@ export const servicesData: ServicePageData[] = [
     name: "Şehir İçi Araç Taşıma",
     shortTitle: "Şehir İçi Taşıma",
     title: "Şehir İçi Araç Taşıma | İstanbul İlçeleri Arası Arman Oto Kurtarma",
-    description: "İstanbul ilçeleri arasında güvenli ve kontrollü şehir içi araç taşıma. Servis nakli, muayene transferi, klasik ve lüks otomobil taşımacılığı: 0536 998 74 52.",
+    description: "İstanbul ilçeleri arasında güvenli ve kontrollü şehir içi araç taşıma. Servis nakli, muayene transferi, klasik ve lüks otomobil taşımacılığı: 05369987452.",
     h1: "Şehir İçi Araç Taşıma ve Çok Noktalı Transfer",
     heroKicker: "İSTANBUL İÇİ SERVİS, NOTER VE MUAYENE TRANSFERLERİ",
     summary: "Çekmeköy merkezli olarak Sancaktepe, Ümraniye ve Sultanbeyli'den arızalı, klasik veya lüks otomobillerinizi belirttiğiniz servise özenle taşıyoruz.",
@@ -361,7 +361,7 @@ export const servicesData: ServicePageData[] = [
     name: "Oto Transfer",
     shortTitle: "Oto Transfer",
     title: "Oto Transfer Hizmeti | Şehirler Arası & Bölgesel Taşıma Arman",
-    description: "Şehirler arası ve bölgesel profesyonel oto transfer hizmeti. İstanbul'dan Türkiye'nin dört bir yanına özenli, tekli veya çoklu özel araç taşıma: 0536 998 74 52.",
+    description: "Şehirler arası ve bölgesel profesyonel oto transfer hizmeti. İstanbul'dan Türkiye'nin dört bir yanına özenli, tekli veya çoklu özel araç taşıma: 05369987452.",
     h1: "Profesyonel Oto Transfer ve Özel Araç Sevkiyatı",
     heroKicker: "ŞEHİRLER ARASI özenli ARAÇ TAŞIMA VE TRANSFER",
     summary: "Aracınızı İstanbul'dan çevre illere (Kocaeli, Sakarya, Bursa, Ankara, İzmir) veya Türkiye'nin her noktasına anahtar teslim güvenle sevk ediyoruz.",
@@ -407,7 +407,7 @@ export const servicesData: ServicePageData[] = [
     name: "Akü Takviye",
     shortTitle: "Akü Takviye",
     title: "Akü Takviye Hizmeti | Yerinde Marş Basma 7/24 Arman Oto Kurtarma",
-    description: "Çekmeköy, Sancaktepe, Ümraniye ve Sultanbeyli'de 7/24 yerinde akü takviyesi. Boşalan akülere profesyonel cihazla güvenli takviye: 0536 998 74 52.",
+    description: "Çekmeköy, Sancaktepe, Ümraniye ve Sultanbeyli'de 7/24 yerinde akü takviyesi. Boşalan akülere profesyonel cihazla güvenli takviye: 05369987452.",
     h1: "Yerinde Akü Takviye ve Mobil Marş Desteği",
     heroKicker: "BİTEN AKÜLERE GÜVENLİ TAKVİYE · 15 DAKİKADA YANINIZDA",
     summary: "Farlar açık kaldığında veya soğuk havada akünüz bittiğinde, aracınızın beynine zarar vermeden profesyonel booster cihazlarımızla yerinde marş basıyoruz.",
@@ -453,7 +453,7 @@ export const servicesData: ServicePageData[] = [
     name: "Lastik Yol Yardımı",
     shortTitle: "Lastik Yol Yardımı",
     title: "Lastik Yol Yardımı | Stepne Değişimi & Şişirme Arman",
-    description: "İstanbul 7/24 lastik yol yardım hizmeti. Patlak lastik değişimi, bijon sökme desteği, hava kompresörü ve en yakın lastikçiye çekici: 0536 998 74 52.",
+    description: "İstanbul 7/24 lastik yol yardım hizmeti. Patlak lastik değişimi, bijon sökme desteği, hava kompresörü ve en yakın lastikçiye çekici: 05369987452.",
     h1: "Lastik Yol Yardımı ve Yerinde Değişim Desteği",
     heroKicker: "PATLAK LASTİK · STEPNE DEĞİŞİMİ · LASTİKÇİYE NAKİL",
     summary: "Yolda lastiğiniz patladığında; stepnenizi takıyor, bijonları güvenle sıkıyor veya stepneniz yoksa aracınızı en yakın açık lastikçiye taşıyoruz.",
@@ -498,5 +498,6 @@ export const servicesData: ServicePageData[] = [
 
 export const findServiceBySlug = (slug: string) =>
   servicesData.find((svc) => svc.slug === slug);
+
 
 

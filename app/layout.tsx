@@ -6,7 +6,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.domain),
   title: "Çekmeköy Oto Çekici | Arman Oto Kurtarma",
-  description: "Çekmeköy merkezli; Sancaktepe, Ümraniye ve Sultanbeyli'de 7/24 oto çekici, kurtarma ve yol yardım. Telefon: 0536 998 74 52.",
+  description: "Çekmeköy merkezli; Sancaktepe, Ümraniye ve Sultanbeyli'de 7/24 oto çekici, kurtarma ve yol yardım. Telefon: 05369987452.",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   alternates: { canonical: "/" },
   robots: {
@@ -47,3 +47,4 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     </html>
   );
 }
+

@@ -61,7 +61,7 @@ export const blogPosts: BlogPostData[] = [
       {
         heading: "4. Arman Oto Kurtarma'yı Arayın ve Canlı Konum Paylaşın",
         paragraphs: [
-          "Güvenli alana geçtikten sonra 0536 998 74 52 numaramızı arayın. Operatörümüze WhatsApp üzerinden canlı konum gönderdiğinizde, harita üzerindeki en yakın kayar kasa kurtarıcımız rota oluşturarak yanınıza ulaşacaktır."
+          "Güvenli alana geçtikten sonra 05369987452 numaramızı arayın. Operatörümüze WhatsApp üzerinden canlı konum gönderdiğinizde, harita üzerindeki en yakın kayar kasa kurtarıcımız rota oluşturarak yanınıza ulaşacaktır."
         ]
       }
     ],
@@ -226,7 +226,7 @@ export const blogPosts: BlogPostData[] = [
       {
         heading: "3. Çekici Seçimi ve Aracın Servise Nakli",
         paragraphs: [
-          "Tutanak işlemleri tamamlandıktan sonra 0536 998 74 52 üzerinden bizi arayabilirsiniz. Kazalı araç yürümüyorsa ahtapot veya kayar kasa ile hasarsız yüklenir, anlaşmalı kaporta servisinize veya otoparka faturasıyla teslim edilir."
+          "Tutanak işlemleri tamamlandıktan sonra 05369987452 üzerinden bizi arayabilirsiniz. Kazalı araç yürümüyorsa ahtapot veya kayar kasa ile hasarsız yüklenir, anlaşmalı kaporta servisinize veya otoparka faturasıyla teslim edilir."
         ]
       }
     ],
@@ -270,7 +270,7 @@ export const blogPosts: BlogPostData[] = [
       {
         heading: "Profesyonel Akü Takviye Hizmeti Alın",
         paragraphs: [
-          "Risk almamak adına 0536 998 74 52 üzerinden Arman Oto Kurtarma yol yardım servisini arayabilirsiniz. Özel taşınabilir akü booster cihazımızla aracınızı dakikalar içinde güvenle çalıştırıyoruz."
+          "Risk almamak adına 05369987452 üzerinden Arman Oto Kurtarma yol yardım servisini arayabilirsiniz. Özel taşınabilir akü booster cihazımızla aracınızı dakikalar içinde güvenle çalıştırıyoruz."
         ]
       }
     ],
@@ -324,3 +324,4 @@ export const blogPosts: BlogPostData[] = [
 
 export const findBlogPostBySlug = (slug: string) =>
   blogPosts.find((post) => post.slug === slug);
+
